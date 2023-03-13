@@ -1,5 +1,5 @@
 module "Setup" {
-  source = "./modules/Setup"
+  source = "./infrastructure/modules/Setup"
 
   hostname = var.hostname
   domain   = var.domain
@@ -8,7 +8,7 @@ module "Setup" {
 }
 
 module "Kubeadm" {
-  source = "./modules/Kubeadm"
+  source = "./infrastructure/modules/Kubeadm"
 
   connection = var.connection
 
@@ -16,7 +16,7 @@ module "Kubeadm" {
 }
 
 module "Calico" {
-  source = "./modules/Calico"
+  source = "./infrastructure/modules/Calico"
 
   connection = var.connection
 
@@ -24,7 +24,7 @@ module "Calico" {
 }
 
 module "metal_lb" {
-  source = "./modules/MetalLb"
+  source = "./infrastructure/modules/MetalLb"
 
   metal_lb_release_name      = var.metal_lb_release_name
   metal_lb_repository        = var.metal_lb_repository
@@ -42,7 +42,7 @@ module "metal_lb" {
 }
 
 module "NginxIngressController" {
-  source = "./modules/NginxIngressController"
+  source = "./infrastructure/modules/NginxIngressController"
 
   nginx_ic_name_override     = var.nginx_ic_name_override
   nginx_ic_release_name      = var.nginx_ic_release_name
@@ -66,7 +66,7 @@ module "NginxIngressController" {
 }
 
 module "PrometheusGrafana" {
-  source = "./modules/PrometheusGrafana"
+  source = "./infrastructure/modules/PrometheusGrafana"
 
   prometheus_release_name      = var.prometheus_release_name
   prometheus_repository        = var.prometheus_repository
@@ -85,7 +85,7 @@ module "PrometheusGrafana" {
 }
 
 module "WireGuard" {
-  source = "../services/WireGuard"
+  source = "./services/WireGuard"
 
   tools_namespace_name = var.tools_namespace_name
   wireguard_server     = var.wireguard_server
