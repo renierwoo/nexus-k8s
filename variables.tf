@@ -14,7 +14,7 @@ variable "domain" {
   description = "The domain use for services on the VPS"
 }
 
-variable "domain" {
+variable "hostname" {
   type        = string
   description = "The hostname of the VPS"
 }
@@ -125,8 +125,6 @@ variable "prometheus_chart_version" {}
 variable "prometheus_release_namespace" {}
 
 variable "prometheus_controller_image_tag" {}
-
-variable "domain" {}
 
 variable "grafana_domain" {}
 
