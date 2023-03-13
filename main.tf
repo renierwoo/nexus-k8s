@@ -41,56 +41,56 @@ module "metal_lb" {
   connection = var.connection
 }
 
-module "NginxIngressController" {
-  source = "./infrastructure/modules/NginxIngressController"
+# module "NginxIngressController" {
+#   source = "./infrastructure/modules/NginxIngressController"
 
-  nginx_ic_name_override     = var.nginx_ic_name_override
-  nginx_ic_release_name      = var.nginx_ic_release_name
-  nginx_ic_repository        = var.nginx_ic_repository
-  nginx_ic_chart             = var.nginx_ic_chart
-  nginx_ic_chart_version     = var.nginx_ic_chart_version
-  nginx_ic_release_namespace = var.nginx_ic_release_namespace
+#   nginx_ic_name_override     = var.nginx_ic_name_override
+#   nginx_ic_release_name      = var.nginx_ic_release_name
+#   nginx_ic_repository        = var.nginx_ic_repository
+#   nginx_ic_chart             = var.nginx_ic_chart
+#   nginx_ic_chart_version     = var.nginx_ic_chart_version
+#   nginx_ic_release_namespace = var.nginx_ic_release_namespace
 
-  nginx_ic_annotation_name = var.nginx_ic_annotation_name
-  nginx_ic_label_k8s_name  = var.nginx_ic_label_k8s_name
-  nginx_ic_namespace_name  = var.nginx_ic_namespace_name
+#   nginx_ic_annotation_name = var.nginx_ic_annotation_name
+#   nginx_ic_label_k8s_name  = var.nginx_ic_label_k8s_name
+#   nginx_ic_namespace_name  = var.nginx_ic_namespace_name
 
-  nginx_ic_controller_kind                          = var.nginx_ic_controller_kind
-  nginx_ic_controller_image_tag                     = var.nginx_ic_controller_image_tag
-  nginx_ic_controller_replicaCount                  = var.nginx_ic_controller_replicaCount
-  nginx_ic_controller_terminationGracePeriodSeconds = var.nginx_ic_controller_terminationGracePeriodSeconds
-  nginx_ic_controller_enableLatencyMetrics          = var.nginx_ic_controller_enableLatencyMetrics
-  nginx_ic_prometheus_create                        = var.nginx_ic_prometheus_create
-  nginx_ic_prometheus_port                          = var.nginx_ic_prometheus_port
-  nginx_ic_prometheus_scheme                        = var.nginx_ic_prometheus_scheme
-}
+#   nginx_ic_controller_kind                          = var.nginx_ic_controller_kind
+#   nginx_ic_controller_image_tag                     = var.nginx_ic_controller_image_tag
+#   nginx_ic_controller_replicaCount                  = var.nginx_ic_controller_replicaCount
+#   nginx_ic_controller_terminationGracePeriodSeconds = var.nginx_ic_controller_terminationGracePeriodSeconds
+#   nginx_ic_controller_enableLatencyMetrics          = var.nginx_ic_controller_enableLatencyMetrics
+#   nginx_ic_prometheus_create                        = var.nginx_ic_prometheus_create
+#   nginx_ic_prometheus_port                          = var.nginx_ic_prometheus_port
+#   nginx_ic_prometheus_scheme                        = var.nginx_ic_prometheus_scheme
+# }
 
-module "PrometheusGrafana" {
-  source = "./infrastructure/modules/PrometheusGrafana"
+# module "PrometheusGrafana" {
+#   source = "./infrastructure/modules/PrometheusGrafana"
 
-  prometheus_release_name      = var.prometheus_release_name
-  prometheus_repository        = var.prometheus_repository
-  prometheus_chart             = var.prometheus_chart
-  prometheus_chart_version     = var.prometheus_chart_version
-  prometheus_release_namespace = var.prometheus_release_namespace
+#   prometheus_release_name      = var.prometheus_release_name
+#   prometheus_repository        = var.prometheus_repository
+#   prometheus_chart             = var.prometheus_chart
+#   prometheus_chart_version     = var.prometheus_chart_version
+#   prometheus_release_namespace = var.prometheus_release_namespace
 
-  prometheus_annotation_name = var.prometheus_annotation_name
-  prometheus_label_k8s_name  = var.prometheus_label_k8s_name
-  prometheus_namespace_name  = var.prometheus_namespace_name
+#   prometheus_annotation_name = var.prometheus_annotation_name
+#   prometheus_label_k8s_name  = var.prometheus_label_k8s_name
+#   prometheus_namespace_name  = var.prometheus_namespace_name
 
-  prometheus_controller_image_tag = var.prometheus_controller_image_tag
+#   prometheus_controller_image_tag = var.prometheus_controller_image_tag
 
-  domain         = var.domain
-  grafana_domain = var.grafana_domain
-}
+#   domain         = var.domain
+#   grafana_domain = var.grafana_domain
+# }
 
-module "WireGuard" {
-  source = "./services/WireGuard"
+# module "WireGuard" {
+#   source = "./services/WireGuard"
 
-  tools_namespace_name = var.tools_namespace_name
-  wireguard_server     = var.wireguard_server
-  wireguard_peers      = var.wireguard_peers
+#   tools_namespace_name = var.tools_namespace_name
+#   wireguard_server     = var.wireguard_server
+#   wireguard_peers      = var.wireguard_peers
 
-  domain           = var.domain
-  wireguard_domain = var.wireguard_domain
-}
+#   domain           = var.domain
+#   wireguard_domain = var.wireguard_domain
+# }
