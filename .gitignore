@@ -1,9 +1,13 @@
 # Local .terraform directories
 **/.terraform/*
+.terraform*
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+# MacOS Metadata file
+.DS_Store
 
 # Crash log files
 crash.log
@@ -12,7 +16,7 @@ crash.log
 # .tfvars files are managed as part of configuration and so should be included in
 # version control.
 #
-secrets.tfvars
+terraform.tfvars
 
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
@@ -28,11 +32,9 @@ override.tf.json
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
 
-# Ignore vps state info.
-vps-api-info.json
-vps-terraform-state-info.json
-
 # Include Origin Server Certificate, Origin Server Private Key and Cloudflare Origin CA Root Certificate files.
 wootechspace.com.pem
 wootechspace.com.key
 cloudflare_ca_rsa_root.pem
+Cloudflare_CA.crt
+Cloudflare_CA.pem
