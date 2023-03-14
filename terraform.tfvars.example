@@ -14,7 +14,7 @@ grafana_domain = ""
 ##############################
 
 # Location of the kubeconfig file belonging to the Kubernetes API server.
-kubeconfig_path = ""
+#kubeconfig_path = ""
 
 # Context to choose from the kubeconfig file belonging to the Kubernetes API server.
 kubeconfig_context = ""

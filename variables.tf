@@ -31,8 +31,9 @@ variable "hostname" {
 
 variable "kubeconfig_path" {
   type        = string
-  default     = "~/.kube/config"
+  # default     = "~/.kube/config"
   description = "Location of the kubeconfig file belonging to the Kubernetes API server."
+  sensitive   = true
 }
 
 variable "kubeconfig_context" {
