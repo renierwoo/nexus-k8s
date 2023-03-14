@@ -34,26 +34,68 @@ variable "hostname" {
 ### Kubeconfig's variables ###
 ##############################
 
-variable "kubeconfig_path" {
+# variable "kubeconfig_path" {
+#   type        = string
+#   # default     = "~/.kube/config"
+#   description = "Location of the kubeconfig file belonging to the Kubernetes API server."
+#   sensitive   = true
+# }
+
+# variable "kubeconfig_context" {
+#   type        = string
+#   description = "Context to choose from the kubeconfig file belonging to the Kubernetes API server."
+# }
+
+# variable "kubeconfig_cluster" {
+#   type        = string
+#   description = "Cluster name to choose from the kubeconfig file belonging to the Kubernetes API server."
+# }
+
+# variable "kubeconfig_user" {
+#   type        = string
+#   description = "User name to choose from the kubeconfig file belonging to the Kubernetes API server."
+# }
+
+variable "host" {
   type        = string
-  # default     = "~/.kube/config"
-  description = "Location of the kubeconfig file belonging to the Kubernetes API server."
+  description = "The hostname (in form of URI) of the Kubernetes API."
   sensitive   = true
 }
 
-variable "kubeconfig_context" {
+variable "client_certificate" {
   type        = string
-  description = "Context to choose from the kubeconfig file belonging to the Kubernetes API server."
+  description = "PEM-encoded client certificate for TLS authentication."
+  sensitive   = true
 }
 
-variable "kubeconfig_cluster" {
+variable "client_key" {
   type        = string
-  description = "Cluster name to choose from the kubeconfig file belonging to the Kubernetes API server."
+  description = "PEM-encoded client certificate key for TLS authentication."
+  sensitive   = true
 }
 
-variable "kubeconfig_user" {
+variable "cluster_ca_certificate" {
   type        = string
-  description = "User name to choose from the kubeconfig file belonging to the Kubernetes API server."
+  description = "PEM-encoded root certificates bundle for TLS authentication."
+  sensitive   = true
+}
+
+variable "config_context" {
+  type        = string
+  description = "Context to choose from the config file."
+  sensitive   = true
+}
+
+variable "config_context_auth_info" {
+  type        = string
+  description = "Authentication info context of the kube config (name of the kubeconfig user, --user flag in kubectl)."
+  sensitive   = true
+}
+
+variable "config_context_cluster" {
+  type        = string
+  description = "Cluster context of the kube config (name of the kubeconfig cluster, --cluster flag in kubectl)."
+  sensitive   = true
 }
 
 #########################

@@ -35,22 +35,43 @@ provider "null" {
 }
 
 provider "kubernetes" {
-  config_path              = var.kubeconfig_path
-  config_context           = var.kubeconfig_context
-  config_context_cluster   = var.kubeconfig_cluster
-  config_context_auth_info = var.kubeconfig_user
+  host                     = var.host
+  client_certificate       = var.client_certificate
+  client_key               = var.client_key
+  cluster_ca_certificate   = var.cluster_ca_certificate
+  config_context           = var.config_context
+  config_context_auth_info = var.config_context_auth_info
+  config_context_cluster   = var.config_context_cluster
+  # config_path              = var.kubeconfig_path
+  # config_context           = var.kubeconfig_context
+  # config_context_cluster   = var.kubeconfig_cluster
+  # config_context_auth_info = var.kubeconfig_user
 }
 
 provider "helm" {
   kubernetes {
-    config_path    = var.kubeconfig_path
-    config_context = var.kubeconfig_context
+  host                     = var.host
+  client_certificate       = var.client_certificate
+  client_key               = var.client_key
+  cluster_ca_certificate   = var.cluster_ca_certificate
+  config_context           = var.config_context
+  config_context_auth_info = var.config_context_auth_info
+  config_context_cluster   = var.config_context_cluster
+    # config_path    = var.kubeconfig_path
+    # config_context = var.kubeconfig_context
   }
 }
 
 provider "kubectl" {
-  config_path              = var.kubeconfig_path
-  config_context           = var.kubeconfig_context
-  config_context_cluster   = var.kubeconfig_cluster
-  config_context_auth_info = var.kubeconfig_user
+  host                     = var.host
+  client_certificate       = var.client_certificate
+  client_key               = var.client_key
+  cluster_ca_certificate   = var.cluster_ca_certificate
+  config_context           = var.config_context
+  config_context_auth_info = var.config_context_auth_info
+  config_context_cluster   = var.config_context_cluster
+  # config_path              = var.kubeconfig_path
+  # config_context           = var.kubeconfig_context
+  # config_context_cluster   = var.kubeconfig_cluster
+  # config_context_auth_info = var.kubeconfig_user
 }
