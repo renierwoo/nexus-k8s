@@ -86,17 +86,17 @@ variable "cluster_ca_certificate" {
 #   sensitive   = true
 # }
 
-variable "config_context_auth_info" {
-  type        = string
-  description = "Authentication info context of the kube config (name of the kubeconfig user, --user flag in kubectl)."
-  sensitive   = true
-}
+# variable "config_context_auth_info" {
+#   type        = string
+#   description = "Authentication info context of the kube config (name of the kubeconfig user, --user flag in kubectl)."
+#   sensitive   = true
+# }
 
-variable "config_context_cluster" {
-  type        = string
-  description = "Cluster context of the kube config (name of the kubeconfig cluster, --cluster flag in kubectl)."
-  sensitive   = true
-}
+# variable "config_context_cluster" {
+#   type        = string
+#   description = "Cluster context of the kube config (name of the kubeconfig cluster, --cluster flag in kubectl)."
+#   sensitive   = true
+# }
 
 #########################
 ### MetalLB variables ###

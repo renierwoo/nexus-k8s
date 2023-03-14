@@ -40,8 +40,8 @@ provider "kubernetes" {
   client_key               = base64decode(var.client_key)
   cluster_ca_certificate   = base64decode(var.cluster_ca_certificate)
   # config_context           = var.config_context
-  config_context_auth_info = var.config_context_auth_info
-  config_context_cluster   = var.config_context_cluster
+  # config_context_auth_info = var.config_context_auth_info
+  # config_context_cluster   = var.config_context_cluster
   # config_path              = var.kubeconfig_path
   # config_context           = var.kubeconfig_context
   # config_context_cluster   = var.kubeconfig_cluster
@@ -55,8 +55,8 @@ provider "helm" {
     client_key               = base64decode(var.client_key)
     cluster_ca_certificate   = base64decode(var.cluster_ca_certificate)
     # config_context           = var.config_context
-    config_context_auth_info = var.config_context_auth_info
-    config_context_cluster   = var.config_context_cluster
+    # config_context_auth_info = var.config_context_auth_info
+    # config_context_cluster   = var.config_context_cluster
     # config_path    = var.kubeconfig_path
     # config_context = var.kubeconfig_context
   }
@@ -68,8 +68,8 @@ provider "kubectl" {
   client_key               = base64decode(var.client_key)
   cluster_ca_certificate   = base64decode(var.cluster_ca_certificate)
   # config_context           = var.config_context
-  config_context_auth_info = var.config_context_auth_info
-  config_context_cluster   = var.config_context_cluster
+  # config_context_auth_info = var.config_context_auth_info
+  # config_context_cluster   = var.config_context_cluster
   # config_path              = var.kubeconfig_path
   # config_context           = var.kubeconfig_context
   # config_context_cluster   = var.kubeconfig_cluster
