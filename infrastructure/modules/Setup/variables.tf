@@ -1,5 +1,7 @@
 variable "connection" {}
 
+variable "private_key" {}
+
 variable "hostname" {
   type        = string
   description = "The hostname of the VPS"

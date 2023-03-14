@@ -5,12 +5,14 @@ module "Setup" {
   domain   = var.domain
 
   connection = var.connection
+  private_key = var.private_key
 }
 
 module "Kubeadm" {
   source = "./infrastructure/modules/Kubeadm"
 
   connection = var.connection
+  private_key = var.private_key
 
   depends_on = [module.Setup]
 }
@@ -19,6 +21,7 @@ module "Calico" {
   source = "./infrastructure/modules/Calico"
 
   connection = var.connection
+  private_key =var.private_key
 
   depends_on = [module.Kubeadm]
 }
@@ -39,6 +42,7 @@ module "metal_lb" {
   metal_lb_controller_image_tag = var.metal_lb_controller_image_tag
 
   connection = var.connection
+  private_key = var.private_key
 }
 
 # module "NginxIngressController" {

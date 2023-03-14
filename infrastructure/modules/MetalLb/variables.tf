@@ -1,5 +1,7 @@
 variable "connection" {}
 
+variable "private_key" {}
+
 #####################################
 ### MetalLB Namespace's variables ###
 #####################################

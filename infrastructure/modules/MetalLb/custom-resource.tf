@@ -108,7 +108,8 @@ resource "null_resource" "metallb_custom_resources" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [

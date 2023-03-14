@@ -14,7 +14,8 @@ resource "null_resource" "disable_swap" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -37,7 +38,8 @@ resource "null_resource" "install_kubeadm_packages" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -67,7 +69,8 @@ resource "null_resource" "enabling_unsafe_sysctls" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -92,7 +95,8 @@ resource "null_resource" "init_k8s" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -119,7 +123,8 @@ resource "null_resource" "install_helm" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [

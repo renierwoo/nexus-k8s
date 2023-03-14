@@ -18,7 +18,8 @@ resource "null_resource" "update_system_packages" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -42,7 +43,8 @@ resource "null_resource" "change_hostname" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -67,7 +69,8 @@ resource "null_resource" "change_hosts" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -96,7 +99,8 @@ resource "null_resource" "uninstall_old_versions" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -121,7 +125,8 @@ resource "null_resource" "setup_docker_repository" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -149,7 +154,8 @@ resource "null_resource" "install_docker_engine" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -184,7 +190,8 @@ resource "null_resource" "forwarding_ipv4_bridge" {
       type        = var.connection.type
       host        = var.connection.host
       user        = var.connection.user
-      private_key = file(var.connection.private_key)
+      private_key = var.private_key
+      # private_key = file(var.connection.private_key)
     }
 
     inline = [
@@ -220,7 +227,8 @@ resource "null_resource" "configure_ufw" {
     type        = var.connection.type
     host        = var.connection.host
     user        = var.connection.user
-    private_key = file(var.connection.private_key)
+    private_key = var.private_key
+    # private_key = file(var.connection.private_key)
   }
 
   provisioner "file" {

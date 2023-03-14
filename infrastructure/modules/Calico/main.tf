@@ -12,7 +12,8 @@ resource "null_resource" "install_calico_calicoctl" {
     type        = var.connection.type
     host        = var.connection.host
     user        = var.connection.user
-    private_key = "${file(var.connection.private_key)}"
+    private_key = var.private_key
+    # private_key = "${file(var.connection.private_key)}"
   }
 
   provisioner "file" {

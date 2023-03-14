@@ -4,9 +4,15 @@ variable "connection" {
     host        = string
     type        = string
     user        = string
-    private_key = string
+    # private_key = string
   })
   description = "The connection information for the remote-exec provisioners."
+}
+
+variable "private_key" {
+  type        = string
+  description = "The SSH private key used for connecting to the VPS"
+  sensitive   = true
 }
 
 variable "domain" {
