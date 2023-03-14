@@ -73,76 +73,76 @@ variable "metal_lb_release_namespace" {}
 
 variable "metal_lb_controller_image_tag" {}
 
-#####################################################
-### Kubernetes NGINX Ingress Controller variables ###
-#####################################################
+# #####################################################
+# ### Kubernetes NGINX Ingress Controller variables ###
+# #####################################################
 
-variable "nginx_ic_annotation_name" {}
+# variable "nginx_ic_annotation_name" {}
 
-variable "nginx_ic_label_k8s_name" {}
+# variable "nginx_ic_label_k8s_name" {}
 
-variable "nginx_ic_namespace_name" {}
+# variable "nginx_ic_namespace_name" {}
 
-variable "nginx_ic_name_override" {}
+# variable "nginx_ic_name_override" {}
 
-variable "nginx_ic_release_name" {}
+# variable "nginx_ic_release_name" {}
 
-variable "nginx_ic_repository" {}
+# variable "nginx_ic_repository" {}
 
-variable "nginx_ic_chart" {}
+# variable "nginx_ic_chart" {}
 
-variable "nginx_ic_chart_version" {}
+# variable "nginx_ic_chart_version" {}
 
-variable "nginx_ic_release_namespace" {}
+# variable "nginx_ic_release_namespace" {}
 
-variable "nginx_ic_controller_kind" {}
+# variable "nginx_ic_controller_kind" {}
 
-variable "nginx_ic_controller_image_tag" {}
+# variable "nginx_ic_controller_image_tag" {}
 
-variable "nginx_ic_controller_replicaCount" {}
+# variable "nginx_ic_controller_replicaCount" {}
 
-variable "nginx_ic_controller_terminationGracePeriodSeconds" {}
+# variable "nginx_ic_controller_terminationGracePeriodSeconds" {}
 
-variable "nginx_ic_controller_enableLatencyMetrics" {}
+# variable "nginx_ic_controller_enableLatencyMetrics" {}
 
-variable "nginx_ic_prometheus_create" {}
+# variable "nginx_ic_prometheus_create" {}
 
-variable "nginx_ic_prometheus_port" {}
+# variable "nginx_ic_prometheus_port" {}
 
-variable "nginx_ic_prometheus_scheme" {}
+# variable "nginx_ic_prometheus_scheme" {}
 
-############################
-### Prometheus variables ###
-############################
+# ############################
+# ### Prometheus variables ###
+# ############################
 
-variable "prometheus_annotation_name" {}
+# variable "prometheus_annotation_name" {}
 
-variable "prometheus_label_k8s_name" {}
+# variable "prometheus_label_k8s_name" {}
 
-variable "prometheus_namespace_name" {}
+# variable "prometheus_namespace_name" {}
 
-variable "prometheus_release_name" {}
+# variable "prometheus_release_name" {}
 
-variable "prometheus_repository" {}
+# variable "prometheus_repository" {}
 
-variable "prometheus_chart" {}
+# variable "prometheus_chart" {}
 
-variable "prometheus_chart_version" {}
+# variable "prometheus_chart_version" {}
 
-variable "prometheus_release_namespace" {}
+# variable "prometheus_release_namespace" {}
 
-variable "prometheus_controller_image_tag" {}
+# variable "prometheus_controller_image_tag" {}
 
-variable "grafana_domain" {}
+# variable "grafana_domain" {}
 
-###########################
-### WireGuard variables ###
-###########################
+# ###########################
+# ### WireGuard variables ###
+# ###########################
 
-variable "tools_namespace_name" {}
+# variable "tools_namespace_name" {}
 
-variable "wireguard_server" {}
+# variable "wireguard_server" {}
 
-variable "wireguard_peers" {}
+# variable "wireguard_peers" {}
 
-variable "wireguard_domain" {}
+# variable "wireguard_domain" {}
