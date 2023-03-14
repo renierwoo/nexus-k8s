@@ -36,9 +36,9 @@ provider "null" {
 
 provider "kubernetes" {
   host                     = var.host
-  client_certificate       = var.client_certificate
-  client_key               = var.client_key
-  cluster_ca_certificate   = var.cluster_ca_certificate
+  client_certificate       = base64decode(var.client_certificate)
+  client_key               = base64decode(var.client_key)
+  cluster_ca_certificate   = base64decode(var.cluster_ca_certificate)
   config_context           = var.config_context
   config_context_auth_info = var.config_context_auth_info
   config_context_cluster   = var.config_context_cluster
@@ -50,13 +50,13 @@ provider "kubernetes" {
 
 provider "helm" {
   kubernetes {
-  host                     = var.host
-  client_certificate       = var.client_certificate
-  client_key               = var.client_key
-  cluster_ca_certificate   = var.cluster_ca_certificate
-  config_context           = var.config_context
-  config_context_auth_info = var.config_context_auth_info
-  config_context_cluster   = var.config_context_cluster
+    host                     = var.host
+    client_certificate       = base64decode(var.client_certificate)
+    client_key               = base64decode(var.client_key)
+    cluster_ca_certificate   = base64decode(var.cluster_ca_certificate)
+    config_context           = var.config_context
+    config_context_auth_info = var.config_context_auth_info
+    config_context_cluster   = var.config_context_cluster
     # config_path    = var.kubeconfig_path
     # config_context = var.kubeconfig_context
   }
@@ -64,9 +64,9 @@ provider "helm" {
 
 provider "kubectl" {
   host                     = var.host
-  client_certificate       = var.client_certificate
-  client_key               = var.client_key
-  cluster_ca_certificate   = var.cluster_ca_certificate
+  client_certificate       = base64decode(var.client_certificate)
+  client_key               = base64decode(var.client_key)
+  cluster_ca_certificate   = base64decode(var.cluster_ca_certificate)
   config_context           = var.config_context
   config_context_auth_info = var.config_context_auth_info
   config_context_cluster   = var.config_context_cluster

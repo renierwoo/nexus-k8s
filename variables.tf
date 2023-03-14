@@ -1,9 +1,9 @@
 variable "connection" {
   sensitive = true
   type = object({
-    host        = string
-    type        = string
-    user        = string
+    host = string
+    type = string
+    user = string
     # private_key = string
   })
   description = "The connection information for the remote-exec provisioners."
