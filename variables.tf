@@ -80,11 +80,11 @@ variable "cluster_ca_certificate" {
   sensitive   = true
 }
 
-variable "config_context" {
-  type        = string
-  description = "Context to choose from the config file."
-  sensitive   = true
-}
+# variable "config_context" {
+#   type        = string
+#   description = "Context to choose from the config file."
+#   sensitive   = true
+# }
 
 variable "config_context_auth_info" {
   type        = string
