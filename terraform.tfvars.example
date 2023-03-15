@@ -1,0 +1,186 @@
+connection = {
+  host        = ""
+#  private_key = ""
+  type        = ""
+  user        = ""
+}
+
+hostname       = ""
+domain         = ""
+grafana_domain = ""
+
+##############################
+### Kubeconfig's variables ###
+##############################
+
+# Location of the kubeconfig file belonging to the Kubernetes API server.
+#kubeconfig_path = ""
+
+# Context to choose from the kubeconfig file belonging to the Kubernetes API server.
+kubeconfig_context = ""
+
+# Cluster name to choose from the kubeconfig file belonging to the Kubernetes API server.
+kubeconfig_cluster = ""
+
+# User name to choose from the kubeconfig file belonging to the Kubernetes API server.
+kubeconfig_user = ""
+
+#########################
+### MetalLB variables ###
+#########################
+
+# Metadata namespace annotations.
+metal_lb_annotation_name = ""
+
+# Metadata namespace labels.
+metal_lb_label_k8s_name = ""
+
+# Metadata namespace name.
+metal_lb_namespace_name = ""
+
+# Release name.
+metal_lb_release_name = ""
+
+# Repository URL where to locate the requested chart.
+metal_lb_repository = ""
+
+# Chart name to be installed.
+metal_lb_chart = ""
+
+# Specify the exact chart version to install.
+metal_lb_chart_version = ""
+
+# The namespace to install the release into.
+metal_lb_release_namespace = ""
+
+# Will wait until all resources are in a ready state before marking the release as successful.
+# metal_lb_wait_state = ""
+
+# The tag of the MetalLB image.
+metal_lb_controller_image_tag = ""
+
+#####################################################
+### Kubernetes NGINX Ingress Controller variables ###
+#####################################################
+
+# Metadata namespace annotations.
+nginx_ic_annotation_name = ""
+
+# Metadata namespace labels.
+nginx_ic_label_k8s_name = ""
+
+# Metadata namespace name.
+nginx_ic_namespace_name = ""
+
+# Name Override
+nginx_ic_name_override = ""
+
+# Release name.
+nginx_ic_release_name = ""
+
+# Repository URL where to locate the requested chart.
+nginx_ic_repository = ""
+
+# Chart name to be installed.
+nginx_ic_chart = ""
+
+# Specify the exact chart version to install.
+nginx_ic_chart_version = ""
+
+# The namespace to install the release into.
+nginx_ic_release_namespace = ""
+
+# Will wait until all resources are in a ready state before marking the release as successful.
+# nginx_ic_wait_state = ""
+
+# The kind of the Ingress Controller installation - Deployment or DaemonSet.
+nginx_ic_controller_kind = ""
+
+# The tag of the Ingress Controller image.
+nginx_ic_controller_image_tag = ""
+
+# The number of replicas of the Ingress Controller deployment.
+nginx_ic_controller_replicaCount = ""
+
+# The termination grace period of the Ingress Controller pod.
+nginx_ic_controller_terminationGracePeriodSeconds = ""
+
+# Enable collection of latency metrics for upstreams. Requires prometheus.create.
+nginx_ic_controller_enableLatencyMetrics = ""
+
+# Expose NGINX or NGINX Plus metrics in the Prometheus format.
+nginx_ic_prometheus_create = ""
+
+# Configures the port to scrape the metrics.
+nginx_ic_prometheus_port = ""
+
+# Configures the HTTP scheme to use for connections to the Prometheus endpoint.
+nginx_ic_prometheus_scheme = ""
+
+############################
+### Prometheus variables ###
+############################
+
+# Metadata namespace annotations.
+prometheus_annotation_name = ""
+
+# Metadata namespace labels.
+prometheus_label_k8s_name = ""
+
+# Metadata namespace name.
+prometheus_namespace_name = ""
+
+# Release name.
+prometheus_release_name = ""
+
+# Repository URL where to locate the requested chart.
+prometheus_repository = ""
+
+# Chart name to be installed.
+prometheus_chart = ""
+
+# Specify the exact chart version to install.
+prometheus_chart_version = ""
+
+# The namespace to install the release into.
+prometheus_release_namespace = ""
+
+# # Will wait until all resources are in a ready state before marking the release as successful.
+# prometheus_wait_state = ""
+
+# The tag of the Prometheus image.
+prometheus_controller_image_tag = ""
+
+###########################
+### WireGuard variables ###
+###########################
+
+tools_namespace_name = ""
+
+wireguard_domain = ""
+
+wireguard_server = {
+  private_key = ""
+  public_key  = ""
+  ip_address  = ""
+  dns         = ""
+  mtu         = ""
+  listen_port = ""
+  post_up     = ""
+  post_down   = ""
+}
+
+wireguard_peers = [
+  {
+    comment     = "",
+    private_key = "",
+    public_key  = "",
+    allowed_ips = ""
+  },
+  {
+    comment     = "",
+    private_key = "",
+    public_key  = "",
+    allowed_ips = ""
+  }
+]
