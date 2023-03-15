@@ -120,43 +120,43 @@ variable "metal_lb_release_namespace" {}
 
 variable "metal_lb_controller_image_tag" {}
 
-# #####################################################
-# ### Kubernetes NGINX Ingress Controller variables ###
-# #####################################################
+#####################################################
+### Kubernetes NGINX Ingress Controller variables ###
+#####################################################
 
-# variable "nginx_ic_annotation_name" {}
+variable "nginx_ic_annotation_name" {}
 
-# variable "nginx_ic_label_k8s_name" {}
+variable "nginx_ic_label_k8s_name" {}
 
-# variable "nginx_ic_namespace_name" {}
+variable "nginx_ic_namespace_name" {}
 
-# variable "nginx_ic_name_override" {}
+variable "nginx_ic_name_override" {}
 
-# variable "nginx_ic_release_name" {}
+variable "nginx_ic_release_name" {}
 
-# variable "nginx_ic_repository" {}
+variable "nginx_ic_repository" {}
 
-# variable "nginx_ic_chart" {}
+variable "nginx_ic_chart" {}
 
-# variable "nginx_ic_chart_version" {}
+variable "nginx_ic_chart_version" {}
 
-# variable "nginx_ic_release_namespace" {}
+variable "nginx_ic_release_namespace" {}
 
-# variable "nginx_ic_controller_kind" {}
+variable "nginx_ic_controller_kind" {}
 
-# variable "nginx_ic_controller_image_tag" {}
+variable "nginx_ic_controller_image_tag" {}
 
-# variable "nginx_ic_controller_replicaCount" {}
+variable "nginx_ic_controller_replicaCount" {}
 
-# variable "nginx_ic_controller_terminationGracePeriodSeconds" {}
+variable "nginx_ic_controller_terminationGracePeriodSeconds" {}
 
-# variable "nginx_ic_controller_enableLatencyMetrics" {}
+variable "nginx_ic_controller_enableLatencyMetrics" {}
 
-# variable "nginx_ic_prometheus_create" {}
+variable "nginx_ic_prometheus_create" {}
 
-# variable "nginx_ic_prometheus_port" {}
+variable "nginx_ic_prometheus_port" {}
 
-# variable "nginx_ic_prometheus_scheme" {}
+variable "nginx_ic_prometheus_scheme" {}
 
 # ############################
 # ### Prometheus variables ###
