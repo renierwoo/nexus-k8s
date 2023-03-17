@@ -100,7 +100,7 @@ resource "null_resource" "set_hosts" {
         "echo 'Already changed'",
       "else",
         "# If the domain is not set, run the command to set it.",
-        "else sudo sed -i '/${var.connection.host}/ s/$/ ${var.domain}/' /etc/hosts",
+        "sudo sed -i '/${var.connection.host}/ s/$/ ${var.domain}/' /etc/hosts",
       "fi"
     ]
   }
