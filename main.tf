@@ -1,12 +1,12 @@
-# module "Setup" {
-#   source = "./infrastructure/modules/Setup"
+module "Setup" {
+  source = "./infrastructure/modules/Setup"
 
-#   hostname = var.hostname
-#   domain   = var.domain
+  hostname = var.hostname
+  domain   = var.domain
 
-#   connection = var.connection
-#   private_key = var.private_key
-# }
+  connection = var.connection
+  private_key = var.private_key
+}
 
 # module "Kubeadm" {
 #   source = "./infrastructure/modules/Kubeadm"
