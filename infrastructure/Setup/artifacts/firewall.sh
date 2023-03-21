@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Set error mode to stop the script if there is an error.
-set -e
+echo Enabling error checking and debugging options.
+set -euxo pipefail
 
 # # Reset the firewall rules
 # sudo ufw --force reset
