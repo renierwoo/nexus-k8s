@@ -17,7 +17,7 @@ resource "null_resource" "update_system" {
 
     inline = [
       "echo Enabling error checking and debugging options.",
-      "set -euxo pipefail",
+      "set -eux",
       "echo Updating package list.",
       "if sudo apt update; then",
         "echo The package list has been updated.",
@@ -55,7 +55,7 @@ resource "null_resource" "set_hostname" {
 
     inline = [
       "echo Enabling error checking and debugging options.",
-      "set -euxo pipefail",
+      "set -eux",
       "echo Checking if the hostname is configured.",
       "if hostnamectl hostname | grep '${var.hostname}'; then",
         "echo The hostname is already configured",
@@ -90,7 +90,7 @@ resource "null_resource" "set_hosts" {
 
     inline = [
       "echo Enabling error checking and debugging options.",
-      "set -euxo pipefail",
+      "set -eux",
       "echo 'Checking if the domain is configured (Part 1).'",
       "if cat /etc/hosts | grep '127.0.1.1' | grep '${var.domain}'; then",
         "echo The domain is already configured.",
@@ -140,7 +140,7 @@ resource "null_resource" "uninstall_old_versions" {
 
     inline = [
       "echo Enabling error checking and debugging options.",
-      "set -euxo pipefail",
+      "set -eux",
       "echo Checking if there are old versions of Docker packages on the system.",
       "for package in ${join(" ", var.old_package_versions)}; do",
         "if dpkg-query -s $package > /dev/null 2>&1; then",
@@ -176,7 +176,7 @@ resource "null_resource" "setup_docker_repository" {
 
     inline = [
       "echo Enabling error checking and debugging options.",
-      "set -euxo pipefail",
+      "set -eux",
       "echo Checking if the Docker packages are installed.",
       "for package in ${join(" ", var.packages_apt_https)}; do",
         "if dpkg-query -s $package > /dev/null 2>&1; then",
@@ -248,7 +248,7 @@ resource "null_resource" "install_docker_engine" {
 
     inline = [
       "echo Enabling error checking and debugging options.",
-      "set -euxo pipefail",
+      "set -eux",
       "echo Checking if the packages exists on the system.",
       "for package in ${join(" ", var.packages_for_docker)}; do",
         "if dpkg-query -s $package > /dev/null 2>&1; then",
@@ -302,7 +302,7 @@ resource "null_resource" "forwarding_ipv4_bridge" {
 
     inline = [
       "echo Enabling error checking and debugging options.",
-      "set -euxo pipefail",
+      "set -eux",
       "echo Checking if the '/etc/modules-load.d/k8s.conf' file exist.",
       "if [ -f '/etc/modules-load.d/k8s.conf' ]; then",
         "echo The file '/etc/modules-load.d/k8s.conf' already exists",
@@ -352,7 +352,7 @@ resource "null_resource" "configure_ufw" {
   provisioner "remote-exec" {
     inline = [
       "echo Enabling error checking and debugging options.",
-      "set -euxo pipefail",
+      "set -eux",
       "chmod +x /tmp/firewall.sh",
       "/tmp/firewall.sh"
     ]
