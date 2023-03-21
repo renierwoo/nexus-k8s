@@ -1,10 +1,10 @@
 module "Setup" {
-  source = "./infrastructure/modules/Setup"
+  source = "./infrastructure/Setup"
 
   hostname = var.hostname
   domain   = var.domain
 
-  connection = var.connection
+  connection  = var.connection
   private_key = var.private_key
 }
 
@@ -46,7 +46,7 @@ module "Setup" {
 # }
 
 module "NginxIngressController" {
-  source = "./infrastructure/modules/NginxIngressController"
+  source = "./infrastructure/NginxIngressController"
 
   nginx_ic_name_override     = var.nginx_ic_name_override
   nginx_ic_release_name      = var.nginx_ic_release_name
