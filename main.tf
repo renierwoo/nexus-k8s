@@ -45,8 +45,8 @@ module "Setup" {
 #   private_key = var.private_key
 # }
 
-module "NginxIngressController" {
-  source = "./infrastructure/NginxIngressController"
+module "IngressNginxController" {
+  source = "./infrastructure/IngressNginxController"
 
   nginx_ic_name_override     = var.nginx_ic_name_override
   nginx_ic_release_name      = var.nginx_ic_release_name
