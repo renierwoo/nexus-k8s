@@ -93,7 +93,7 @@ variable "nginx_ic_prometheus_create" {
 
 variable "nginx_ic_prometheus_port" {
   type        = string
-  default     = "9113"
+  default     = "10254"
   description = "Configures the port to scrape the metrics."
 }
 

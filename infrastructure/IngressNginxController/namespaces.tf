@@ -1,4 +1,4 @@
-resource "kubernetes_namespace" "nginx_ingress_controller" {
+resource "kubernetes_namespace" "ingress_nginx_controller" {
   metadata {
     annotations = {
       name = var.nginx_ic_annotation_name
