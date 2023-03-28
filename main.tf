@@ -8,14 +8,14 @@ module "Setup" {
   private_key = var.private_key
 }
 
-# module "Kubeadm" {
-#   source = "./infrastructure/modules/Kubeadm"
+module "Kubeadm" {
+  source = "./infrastructure/Kubeadm"
 
-#   connection = var.connection
-#   private_key = var.private_key
+  connection = var.connection
+  private_key = var.private_key
 
-#   depends_on = [module.Setup]
-# }
+  depends_on = [module.Setup]
+}
 
 # module "Calico" {
 #   source = "./infrastructure/modules/Calico"
