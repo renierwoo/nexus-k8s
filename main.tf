@@ -17,14 +17,14 @@ module "Kubeadm" {
   depends_on = [module.Setup]
 }
 
-# module "Calico" {
-#   source = "./infrastructure/modules/Calico"
+module "Calico" {
+  source = "./infrastructure/Calico"
 
-#   connection = var.connection
-#   private_key =var.private_key
+  connection = var.connection
+  private_key =var.private_key
 
-#   depends_on = [module.Kubeadm]
-# }
+  depends_on = [module.Kubeadm]
+}
 
 # module "metal_lb" {
 #   source = "./infrastructure/modules/MetalLb"
