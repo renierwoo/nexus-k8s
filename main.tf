@@ -26,24 +26,24 @@ module "Calico" {
   depends_on = [module.Kubeadm]
 }
 
-# module "metal_lb" {
-#   source = "./infrastructure/modules/MetalLb"
+module "metal_lb" {
+  source = "./infrastructure/MetalLb"
 
-#   metal_lb_release_name      = var.metal_lb_release_name
-#   metal_lb_repository        = var.metal_lb_repository
-#   metal_lb_chart             = var.metal_lb_chart
-#   metal_lb_chart_version     = var.metal_lb_chart_version
-#   metal_lb_release_namespace = var.metal_lb_release_namespace
+  metal_lb_release_name      = var.metal_lb_release_name
+  metal_lb_repository        = var.metal_lb_repository
+  metal_lb_chart             = var.metal_lb_chart
+  metal_lb_chart_version     = var.metal_lb_chart_version
+  metal_lb_release_namespace = var.metal_lb_release_namespace
 
-#   metal_lb_annotation_name = var.metal_lb_annotation_name
-#   metal_lb_label_k8s_name  = var.metal_lb_label_k8s_name
-#   metal_lb_namespace_name  = var.metal_lb_namespace_name
+  metal_lb_annotation_name = var.metal_lb_annotation_name
+  metal_lb_label_k8s_name  = var.metal_lb_label_k8s_name
+  metal_lb_namespace_name  = var.metal_lb_namespace_name
 
-#   metal_lb_controller_image_tag = var.metal_lb_controller_image_tag
+  metal_lb_controller_image_tag = var.metal_lb_controller_image_tag
 
-#   connection = var.connection
-#   private_key = var.private_key
-# }
+  connection = var.connection
+  private_key = var.private_key
+}
 
 module "IngressNginxController" {
   source = "./infrastructure/IngressNginxController"
