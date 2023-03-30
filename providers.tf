@@ -24,6 +24,15 @@ terraform {
       version = "1.14.0"
     }
   }
+
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "wootechspace"
+
+    workspaces {
+      name = "nexus-k8s"
+    }
+  }
 }
 
 ###########################
@@ -35,6 +44,7 @@ provider "null" {
 }
 
 provider "kubernetes" {
+  # Config for Terraform Cloud
   host                     = var.host
   client_certificate       = base64decode(var.client_certificate)
   client_key               = base64decode(var.client_key)
@@ -42,6 +52,8 @@ provider "kubernetes" {
   # config_context           = var.config_context
   # config_context_auth_info = var.config_context_auth_info
   # config_context_cluster   = var.config_context_cluster
+
+  # # Config for Terraform Local
   # config_path              = var.kubeconfig_path
   # config_context           = var.kubeconfig_context
   # config_context_cluster   = var.kubeconfig_cluster
@@ -50,6 +62,7 @@ provider "kubernetes" {
 
 provider "helm" {
   kubernetes {
+    # Config for Terraform Cloud
     host                     = var.host
     client_certificate       = base64decode(var.client_certificate)
     client_key               = base64decode(var.client_key)
@@ -57,12 +70,17 @@ provider "helm" {
     # config_context           = var.config_context
     # config_context_auth_info = var.config_context_auth_info
     # config_context_cluster   = var.config_context_cluster
-    # config_path    = var.kubeconfig_path
-    # config_context = var.kubeconfig_context
+
+    # # Config for Terraform Local
+    # config_path              = var.kubeconfig_path
+    # config_context           = var.kubeconfig_context
+    # config_context_cluster   = var.kubeconfig_cluster
+    # config_context_auth_info = var.kubeconfig_user
   }
 }
 
 provider "kubectl" {
+  # Config for Terraform Cloud
   host                     = var.host
   client_certificate       = base64decode(var.client_certificate)
   client_key               = base64decode(var.client_key)
@@ -70,6 +88,8 @@ provider "kubectl" {
   # config_context           = var.config_context
   # config_context_auth_info = var.config_context_auth_info
   # config_context_cluster   = var.config_context_cluster
+
+  # # Config for Terraform Local
   # config_path              = var.kubeconfig_path
   # config_context           = var.kubeconfig_context
   # config_context_cluster   = var.kubeconfig_cluster

@@ -33,7 +33,7 @@ variable "hostname" {
 ##############################
 ### Kubeconfig's variables ###
 ##############################
-
+# # Config for Terraform Local
 # variable "kubeconfig_path" {
 #   type        = string
 #   # default     = "~/.kube/config"
@@ -56,6 +56,7 @@ variable "hostname" {
 #   description = "User name to choose from the kubeconfig file belonging to the Kubernetes API server."
 # }
 
+# Config for Terraform Cloud
 variable "host" {
   type        = string
   description = "The hostname (in form of URI) of the Kubernetes API."
@@ -182,14 +183,14 @@ variable "nginx_ic_prometheus_scheme" {}
 
 # variable "grafana_domain" {}
 
-# ###########################
-# ### WireGuard variables ###
-# ###########################
+###########################
+### WireGuard variables ###
+###########################
 
-# variable "tools_namespace_name" {}
+variable "tools_namespace_name" {}
 
-# variable "wireguard_server" {}
+variable "wireguard_server" {}
 
-# variable "wireguard_peers" {}
+variable "wireguard_peers" {}
 
-# variable "wireguard_domain" {}
+variable "wireguard_domain" {}
