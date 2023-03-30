@@ -88,13 +88,13 @@ module "IngressNginxController" {
 #   grafana_domain = var.grafana_domain
 # }
 
-# module "WireGuard" {
-#   source = "./services/WireGuard"
+module "WireGuard" {
+  source = "./services/WireGuard"
 
-#   tools_namespace_name = var.tools_namespace_name
-#   wireguard_server     = var.wireguard_server
-#   wireguard_peers      = var.wireguard_peers
+  tools_namespace_name = var.tools_namespace_name
+  wireguard_server     = var.wireguard_server
+  wireguard_peers      = var.wireguard_peers
 
-#   domain           = var.domain
-#   wireguard_domain = var.wireguard_domain
-# }
+  domain           = var.domain
+  wireguard_domain = var.wireguard_domain
+}

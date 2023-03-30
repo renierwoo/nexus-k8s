@@ -38,3 +38,6 @@ wootechspace.com.key
 cloudflare_ca_rsa_root.pem
 Cloudflare_CA.crt
 Cloudflare_CA.pem
+
+# Include WireGuard client configuration files.
+**/services/WireGuard/artifacts/conf/clients/*

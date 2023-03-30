@@ -183,14 +183,14 @@ variable "nginx_ic_prometheus_scheme" {}
 
 # variable "grafana_domain" {}
 
-# ###########################
-# ### WireGuard variables ###
-# ###########################
+###########################
+### WireGuard variables ###
+###########################
 
-# variable "tools_namespace_name" {}
+variable "tools_namespace_name" {}
 
-# variable "wireguard_server" {}
+variable "wireguard_server" {}
 
-# variable "wireguard_peers" {}
+variable "wireguard_peers" {}
 
-# variable "wireguard_domain" {}
+variable "wireguard_domain" {}
