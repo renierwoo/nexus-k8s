@@ -33,29 +33,30 @@ variable "hostname" {
 ##############################
 ### Kubeconfig's variables ###
 ##############################
+# Config for Terraform Local
+variable "kubeconfig_path" {
+  type        = string
+  # default     = "~/.kube/config"
+  description = "Location of the kubeconfig file belonging to the Kubernetes API server."
+  sensitive   = true
+}
 
-# variable "kubeconfig_path" {
-#   type        = string
-#   # default     = "~/.kube/config"
-#   description = "Location of the kubeconfig file belonging to the Kubernetes API server."
-#   sensitive   = true
-# }
+variable "kubeconfig_context" {
+  type        = string
+  description = "Context to choose from the kubeconfig file belonging to the Kubernetes API server."
+}
 
-# variable "kubeconfig_context" {
-#   type        = string
-#   description = "Context to choose from the kubeconfig file belonging to the Kubernetes API server."
-# }
+variable "kubeconfig_cluster" {
+  type        = string
+  description = "Cluster name to choose from the kubeconfig file belonging to the Kubernetes API server."
+}
 
-# variable "kubeconfig_cluster" {
-#   type        = string
-#   description = "Cluster name to choose from the kubeconfig file belonging to the Kubernetes API server."
-# }
+variable "kubeconfig_user" {
+  type        = string
+  description = "User name to choose from the kubeconfig file belonging to the Kubernetes API server."
+}
 
-# variable "kubeconfig_user" {
-#   type        = string
-#   description = "User name to choose from the kubeconfig file belonging to the Kubernetes API server."
-# }
-
+# Config for Terraform Cloud
 variable "host" {
   type        = string
   description = "The hostname (in form of URI) of the Kubernetes API."
