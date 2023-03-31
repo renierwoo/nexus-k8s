@@ -86,7 +86,7 @@ module "Prometheus" {
   prometheus_label_k8s_name  = var.prometheus_label_k8s_name
   prometheus_namespace_name  = var.prometheus_namespace_name
 
-  prometheus_server_image_tag      = var.prometheus_server_image_tag
+  prometheus_server_image_tag = var.prometheus_server_image_tag
   # prometheus_server_storageClass   = var.prometheus_server_storageClass
   # prometheus_peristent_volume_name = var.prometheus_peristent_volume_name
   # node_name                        = var.node_name
@@ -97,6 +97,25 @@ module "Prometheus" {
   domain_tls_crt    = var.domain_tls_crt
 
   depends_on = [module.IngressNginxController]
+}
+
+module "Grafana" {
+  source = "./services/Grafana"
+
+  grafana_release_name      = var.grafana_release_name
+  grafana_repository        = var.grafana_repository
+  grafana_chart             = var.grafana_chart
+  grafana_chart_version     = var.grafana_chart_version
+  grafana_release_namespace = var.grafana_release_namespace
+
+  grafana_server_image_tag = var.grafana_server_image_tag
+
+  domain         = var.domain
+  grafana_domain = var.grafana_domain
+  domain_tls_key = var.domain_tls_key
+  domain_tls_crt = var.domain_tls_crt
+
+  depends_on = [module.Prometheus]
 }
 
 module "WireGuard" {

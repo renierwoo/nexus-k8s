@@ -193,6 +193,24 @@ variable "domain_tls_key" {}
 
 variable "domain_tls_crt" {}
 
+##################################
+# Grafana Helm Chart's variables #
+##################################
+
+variable "grafana_release_name" {}
+
+variable "grafana_repository" {}
+
+variable "grafana_chart" {}
+
+variable "grafana_chart_version" {}
+
+variable "grafana_release_namespace" {}
+
+variable "grafana_server_image_tag" {}
+
+variable "grafana_domain" {}
+
 ###########################
 ### WireGuard variables ###
 ###########################
