@@ -43,6 +43,8 @@ module "metal_lb" {
 
   connection  = var.connection
   private_key = var.private_key
+
+  depends_on = [module.Calico]
 }
 
 module "IngressNginxController" {
@@ -67,6 +69,8 @@ module "IngressNginxController" {
   nginx_ic_prometheus_create                        = var.nginx_ic_prometheus_create
   nginx_ic_prometheus_port                          = var.nginx_ic_prometheus_port
   nginx_ic_prometheus_scheme                        = var.nginx_ic_prometheus_scheme
+
+  depends_on = [module.metal_lb]
 }
 
 module "Prometheus" {
@@ -88,6 +92,8 @@ module "Prometheus" {
   prometheus_domain = var.prometheus_domain
   domain_tls_key    = var.domain_tls_key
   domain_tls_crt    = var.domain_tls_crt
+
+  depends_on = [module.IngressNginxController]
 }
 
 module "WireGuard" {
@@ -99,4 +105,6 @@ module "WireGuard" {
 
   domain           = var.domain
   wireguard_domain = var.wireguard_domain
+
+  depends_on = [module.IngressNginxController]
 }
