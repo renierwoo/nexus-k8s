@@ -20,11 +20,6 @@ variable "domain" {
   description = "The domain use for services on the VPS"
 }
 
-variable "grafana_domain" {
-  type        = string
-  description = "The domain use for grafana service"
-}
-
 variable "hostname" {
   type        = string
   description = "The hostname of the VPS"
