@@ -159,29 +159,33 @@ variable "nginx_ic_prometheus_port" {}
 
 variable "nginx_ic_prometheus_scheme" {}
 
-# ############################
-# ### Prometheus variables ###
-# ############################
+############################
+### Prometheus variables ###
+############################
 
-# variable "prometheus_annotation_name" {}
+variable "prometheus_annotation_name" {}
 
-# variable "prometheus_label_k8s_name" {}
+variable "prometheus_label_k8s_name" {}
 
-# variable "prometheus_namespace_name" {}
+variable "prometheus_namespace_name" {}
 
-# variable "prometheus_release_name" {}
+variable "prometheus_release_name" {}
 
-# variable "prometheus_repository" {}
+variable "prometheus_repository" {}
 
-# variable "prometheus_chart" {}
+variable "prometheus_chart" {}
 
-# variable "prometheus_chart_version" {}
+variable "prometheus_chart_version" {}
 
-# variable "prometheus_release_namespace" {}
+variable "prometheus_release_namespace" {}
 
-# variable "prometheus_controller_image_tag" {}
+variable "prometheus_server_image_tag" {}
 
-# variable "grafana_domain" {}
+variable "prometheus_domain" {}
+
+variable "domain_tls_key" {}
+
+variable "domain_tls_crt" {}
 
 ###########################
 ### WireGuard variables ###

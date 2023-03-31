@@ -11,7 +11,7 @@ module "Setup" {
 module "Kubeadm" {
   source = "./infrastructure/Kubeadm"
 
-  connection = var.connection
+  connection  = var.connection
   private_key = var.private_key
 
   depends_on = [module.Setup]
@@ -20,8 +20,8 @@ module "Kubeadm" {
 module "Calico" {
   source = "./infrastructure/Calico"
 
-  connection = var.connection
-  private_key =var.private_key
+  connection  = var.connection
+  private_key = var.private_key
 
   depends_on = [module.Kubeadm]
 }
@@ -41,7 +41,7 @@ module "metal_lb" {
 
   metal_lb_controller_image_tag = var.metal_lb_controller_image_tag
 
-  connection = var.connection
+  connection  = var.connection
   private_key = var.private_key
 }
 
@@ -69,24 +69,26 @@ module "IngressNginxController" {
   nginx_ic_prometheus_scheme                        = var.nginx_ic_prometheus_scheme
 }
 
-# module "PrometheusGrafana" {
-#   source = "./infrastructure/modules/PrometheusGrafana"
+module "Prometheus" {
+  source = "./services/Prometheus"
 
-#   prometheus_release_name      = var.prometheus_release_name
-#   prometheus_repository        = var.prometheus_repository
-#   prometheus_chart             = var.prometheus_chart
-#   prometheus_chart_version     = var.prometheus_chart_version
-#   prometheus_release_namespace = var.prometheus_release_namespace
+  prometheus_release_name      = var.prometheus_release_name
+  prometheus_repository        = var.prometheus_repository
+  prometheus_chart             = var.prometheus_chart
+  prometheus_chart_version     = var.prometheus_chart_version
+  prometheus_release_namespace = var.prometheus_release_namespace
 
-#   prometheus_annotation_name = var.prometheus_annotation_name
-#   prometheus_label_k8s_name  = var.prometheus_label_k8s_name
-#   prometheus_namespace_name  = var.prometheus_namespace_name
+  prometheus_annotation_name = var.prometheus_annotation_name
+  prometheus_label_k8s_name  = var.prometheus_label_k8s_name
+  prometheus_namespace_name  = var.prometheus_namespace_name
 
-#   prometheus_controller_image_tag = var.prometheus_controller_image_tag
+  prometheus_server_image_tag = var.prometheus_server_image_tag
 
-#   domain         = var.domain
-#   grafana_domain = var.grafana_domain
-# }
+  domain            = var.domain
+  prometheus_domain = var.prometheus_domain
+  domain_tls_key    = var.domain_tls_key
+  domain_tls_cert   = var.domain_tls_cert
+}
 
 module "WireGuard" {
   source = "./services/WireGuard"
