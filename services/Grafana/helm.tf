@@ -21,10 +21,10 @@ resource "helm_release" "grafana" {
   #   value = kubernetes_secret.grafana.data["admin-user"]
   # }
 
-  set {
-    name  = "admin.passwordKey"
-    value = kubernetes_secret.grafana.data["admin-password"]
-  }
+  # set {
+  #   name  = "admin.passwordKey"
+  #   value = kubernetes_secret.grafana.data["admin-password"]
+  # }
 
   set {
     name = "cookie_secure"
