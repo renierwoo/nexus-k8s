@@ -12,6 +12,11 @@ resource "helm_release" "grafana" {
   }
 
   set {
+    name  = "admin.existingSecret"
+    value = kubernetes_secret.grafana.metadata[0].name
+  }
+
+  set {
     name  = "admin.userKey"
     value = kubernetes_secret.grafana.data["admin-user"]
   }
@@ -55,4 +60,6 @@ resource "helm_release" "grafana" {
     name = "content_security_policy_template"
     value = "default-src 'self'; script-src 'self' 'strict-dynamic' 'nonce-$${nonce}'; object-src 'none'; font-src 'self' https://fonts.gstatic.com/; img-src 'self'; style-src 'self' 'nonce-$${nonce}'; base-uri 'self'; frame-ancestors 'none'; block-all-mixed-content;"
   }
+
+  depends_on = [kubernetes_secret.grafana]
 }
