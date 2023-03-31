@@ -19,15 +19,15 @@ resource "kubernetes_persistent_volume_v1" "prometheus" {
     }
 
     volume_mode = "Filesystem"
-  }
 
-  node_affinity {
-    required {
-      node_selector_terms {
-        match_expressions {
-          key      = "kubernetes.io/hostname"
-          operator = "In"
-          values   = [var.node_name]
+    node_affinity {
+      required {
+        node_selector_terms {
+          match_expressions {
+            key      = "kubernetes.io/hostname"
+            operator = "In"
+            values   = [var.node_name]
+          }
         }
       }
     }
