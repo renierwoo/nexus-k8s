@@ -16,10 +16,10 @@ resource "helm_release" "grafana" {
     value = kubernetes_secret.grafana.metadata[0].name
   }
 
-  set {
-    name  = "admin.userKey"
-    value = kubernetes_secret.grafana.data["admin-user"]
-  }
+  # set {
+  #   name  = "admin.userKey"
+  #   value = kubernetes_secret.grafana.data["admin-user"]
+  # }
 
   set {
     name  = "admin.passwordKey"
