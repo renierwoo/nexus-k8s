@@ -9,7 +9,7 @@ resource "kubernetes_persistent_volume_v1" "prometheus" {
       storage = "20Gi"
     }
 
-    access_modes = ["ReadWriteOnce"]
+    access_modes = ["ReadWriteMany"]
     persistent_volume_reclaim_policy = "Retain"
 
     persistent_volume_source {
