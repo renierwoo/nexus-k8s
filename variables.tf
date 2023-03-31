@@ -20,11 +20,6 @@ variable "domain" {
   description = "The domain use for services on the VPS"
 }
 
-variable "grafana_domain" {
-  type        = string
-  description = "The domain use for grafana service"
-}
-
 variable "hostname" {
   type        = string
   description = "The hostname of the VPS"
@@ -192,6 +187,24 @@ variable "prometheus_domain" {}
 variable "domain_tls_key" {}
 
 variable "domain_tls_crt" {}
+
+##################################
+# Grafana Helm Chart's variables #
+##################################
+
+variable "grafana_release_name" {}
+
+variable "grafana_repository" {}
+
+variable "grafana_chart" {}
+
+variable "grafana_chart_version" {}
+
+variable "grafana_release_namespace" {}
+
+variable "grafana_server_image_tag" {}
+
+variable "grafana_domain" {}
 
 ###########################
 ### WireGuard variables ###
