@@ -59,6 +59,16 @@ variable "prometheus_server_storageClass" {
   description = "The storage class for the persistence volume."
 }
 
+variable "prometheus_peristent_volume_name" {
+  type        = string
+  description = "The name for the persistence volume."
+}
+
+variable "node_name" {
+  type        = string
+  description = "The name for the kubernetes node."
+}
+
 variable "domain" {
   type        = string
   description = "The domain for the naked site."
