@@ -10,4 +10,9 @@ resource "helm_release" "prometheus" {
     name  = "server.image.tag"
     value = var.prometheus_server_image_tag
   }
+
+  set {
+    name  = "server.persistentVolume.storageClass"
+    value = "-"
+  }
 }
