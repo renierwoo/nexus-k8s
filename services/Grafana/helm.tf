@@ -56,11 +56,3 @@ resource "helm_release" "grafana" {
     value = "default-src 'self'; script-src 'self' 'strict-dynamic' 'nonce-$${nonce}'; object-src 'none'; font-src 'self' https://fonts.gstatic.com/; img-src 'self'; style-src 'self' 'nonce-$${nonce}'; base-uri 'self'; frame-ancestors 'none'; block-all-mixed-content;"
   }
 }
-
-
-grafana_release_name = "grafana"
-grafana_repository = "https://grafana.github.io/helm-charts"
-grafana_chart = "grafana"
-grafana_chart_version = "6.52.4"
-grafana_release_namespace = "monitoring"
-grafana_server_image_tag = "9.4.3"
