@@ -21,7 +21,7 @@ resource "kubernetes_ingress_v1" "grafana" {
         path {
           backend {
             service {
-              name = "grafana-server"
+              name = "grafana"
               port {
                 number = 80
               }
