@@ -12,7 +12,12 @@ resource "helm_release" "prometheus" {
   }
 
   set {
-    name  = "server.persistentVolume.storageClass"
-    value = var.prometheus_server_storageClass
+    name  = "server.persistentVolume.enabled"
+    value = "false"
   }
+
+  # set {
+  #   name  = "server.persistentVolume.storageClass"
+  #   value = var.prometheus_server_storageClass
+  # }
 }
