@@ -86,7 +86,8 @@ module "Prometheus" {
   prometheus_label_k8s_name  = var.prometheus_label_k8s_name
   prometheus_namespace_name  = var.prometheus_namespace_name
 
-  prometheus_server_image_tag = var.prometheus_server_image_tag
+  prometheus_server_image_tag    = var.prometheus_server_image_tag
+  prometheus_server_storageClass = var.prometheus_server_storageClass
 
   domain            = var.domain
   prometheus_domain = var.prometheus_domain

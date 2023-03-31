@@ -54,6 +54,11 @@ variable "prometheus_server_image_tag" {
   description = "The tag of the Prometheus image."
 }
 
+variable "prometheus_server_storageClass" {
+  type        = string
+  description = "The storage class for the persistence volume."
+}
+
 variable "domain" {
   type        = string
   description = "The domain for the naked site."
