@@ -3,7 +3,7 @@ resource "kubernetes_storage_class" "prometheus" {
     name = var.prometheus_server_storageClass
   }
 
-  provisioner         = "kubernetes.io/no-provisioner"
+  storage_provisioner = "kubernetes.io/no-provisioner"
   volume_binding_mode = "WaitForFirstConsumer"
 
   parameters = {
