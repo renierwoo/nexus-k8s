@@ -14,6 +14,6 @@ resource "kubernetes_storage_class" "prometheus" {
     metadataBlockAllocType = "zeroed"
   }
 
-  reclaim_policy         = "Retain"
+  reclaim_policy         = "Delete"
   allow_volume_expansion = true
 }
