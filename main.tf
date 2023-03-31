@@ -87,7 +87,7 @@ module "Prometheus" {
   domain            = var.domain
   prometheus_domain = var.prometheus_domain
   domain_tls_key    = var.domain_tls_key
-  domain_tls_crt   = var.domain_tls_crt
+  domain_tls_crt    = var.domain_tls_crt
 }
 
 module "WireGuard" {
