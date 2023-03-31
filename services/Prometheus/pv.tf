@@ -22,7 +22,7 @@ resource "kubernetes_persistent_volume_v1" "prometheus" {
 
     node_affinity {
       required {
-        node_selector_terms {
+        node_selector_term {
           match_expressions {
             key      = "kubernetes.io/hostname"
             operator = "In"
