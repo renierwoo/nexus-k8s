@@ -10,7 +10,7 @@ resource "kubernetes_persistent_volume_v1" "prometheus" {
     }
 
     access_modes = ["ReadWriteMany"]
-    persistent_volume_reclaim_policy = "Retain"
+    persistent_volume_reclaim_policy = "Delete"
 
     persistent_volume_source {
       local {
