@@ -16,6 +16,11 @@ resource "helm_release" "prometheus" {
     value = "false"
   }
 
+  set {
+    name = "alertmanager.persistence.enabled"
+    value = "false"
+  }
+
   # set {
   #   name  = "server.persistentVolume.storageClass"
   #   value = var.prometheus_server_storageClass
