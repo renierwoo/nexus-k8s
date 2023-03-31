@@ -183,6 +183,10 @@ variable "prometheus_server_image_tag" {}
 
 variable "prometheus_server_storageClass" {}
 
+variable "prometheus_peristent_volume_name" {}
+
+variable "node_name" {}
+
 variable "prometheus_domain" {}
 
 variable "domain_tls_key" {}
