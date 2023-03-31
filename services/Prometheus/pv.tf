@@ -14,7 +14,7 @@ resource "kubernetes_persistent_volume_v1" "prometheus" {
 
     persistent_volume_source {
       local {
-        path = "/mnt/data/prometheus"
+        path = "/mnt"
       }
     }
 
