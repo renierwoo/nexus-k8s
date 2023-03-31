@@ -12,6 +12,11 @@ resource "helm_release" "grafana" {
   }
 
   set {
+    name  = "admin.existingSecret"
+    value = kubernetes_secret.grafana.metadata[0].name
+  }
+
+  set {
     name  = "admin.userKey"
     value = kubernetes_secret.grafana.data["admin-user"]
   }
