@@ -13,6 +13,6 @@ resource "helm_release" "prometheus" {
 
   set {
     name  = "server.persistentVolume.storageClass"
-    value = "-"
+    value = var.prometheus_server_storageClass
   }
 }

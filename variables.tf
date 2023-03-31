@@ -181,6 +181,8 @@ variable "prometheus_release_namespace" {}
 
 variable "prometheus_server_image_tag" {}
 
+variable "prometheus_server_storageClass" {}
+
 variable "prometheus_domain" {}
 
 variable "domain_tls_key" {}
