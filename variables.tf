@@ -208,6 +208,8 @@ variable "grafana_domain" {}
 
 variable "grafana_admin_user" {}
 
+variable "grafana_csp_policy" {}
+
 ###########################
 ### WireGuard variables ###
 ###########################

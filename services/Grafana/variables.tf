@@ -59,3 +59,8 @@ variable "grafana_admin_user" {
   sensitive   = true
   description = "The grafana admin user."
 }
+
+variable "grafana_csp_policy" {
+  type        = string
+  description = "The Grafana content security policy."
+}
