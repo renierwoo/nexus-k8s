@@ -110,10 +110,11 @@ module "Grafana" {
 
   grafana_server_image_tag = var.grafana_server_image_tag
 
-  domain         = var.domain
-  grafana_domain = var.grafana_domain
-  domain_tls_key = var.domain_tls_key
-  domain_tls_crt = var.domain_tls_crt
+  domain             = var.domain
+  grafana_domain     = var.grafana_domain
+  grafana_admin_user = var.grafana_admin_user
+  domain_tls_key     = var.domain_tls_key
+  domain_tls_crt     = var.domain_tls_crt
 
   depends_on = [module.Prometheus]
 }

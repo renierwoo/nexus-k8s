@@ -53,3 +53,9 @@ variable "domain_tls_crt" {
   sensitive   = true
   description = "The domain tls certificate."
 }
+
+variable "grafana_admin_user" {
+  type        = string
+  sensitive   = true
+  description = "The grafana admin user."
+}
