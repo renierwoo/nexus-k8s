@@ -9,4 +9,4 @@ grafana.ini:
     hide_version: "true"
     enforce_domain: "true"
     content_security_policy: "true"
-    content_security_policy_template: "\"\"\"default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' $NONCE; object-src 'none'; font-src 'self' https://fonts.gstatic.com/; img-src 'self'; style-src 'self' 'unsafe-eval' 'unsafe-inline' $NONCE; base-uri 'self'; frame-ancestors 'none'; block-all-mixed-content;\"\"\""
+    content_security_policy_template: "\"\"\"default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' $NONCE https://grafana.wootechspace.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js; object-src 'none'; font-src 'self' https://fonts.gstatic.com/; img-src 'self'; style-src 'self' 'unsafe-eval' 'unsafe-inline' $NONCE; base-uri 'self'; frame-ancestors 'none'; block-all-mixed-content;\"\"\""
