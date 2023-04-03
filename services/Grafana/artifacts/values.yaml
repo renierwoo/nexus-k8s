@@ -1,6 +1,6 @@
 grafana.ini:
   server:
-    domain: {{ .Values.domain }}
+    domain: ${grafana_domain}
     root_url: "%(protocol)s://%(domain)s:%(http_port)s/"
   security:
     cookie_secure: "true"
