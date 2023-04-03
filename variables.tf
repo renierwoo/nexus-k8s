@@ -206,6 +206,8 @@ variable "grafana_server_image_tag" {}
 
 variable "grafana_domain" {}
 
+variable "grafana_admin_user" {}
+
 ###########################
 ### WireGuard variables ###
 ###########################
