@@ -16,15 +16,15 @@ resource "helm_release" "grafana" {
     value = kubernetes_secret.grafana.metadata[0].name
   }
 
-  # values = [
-  #   templatefile("${path.module}/artifacts/values.yaml", {
-  #     domain = var.grafana_domain
-  #   })
-  # ]
-
   values = [
-    "${file("${path.module}/artifacts/values.yaml")}"
+    templatefile("${path.module}/artifacts/values.yaml", {
+      domain = var.grafana_domain
+    })
   ]
+
+  # values = [
+  #   "${file("${path.module}/artifacts/values.yaml")}"
+  # ]
 
   depends_on = [kubernetes_secret.grafana]
 }
