@@ -113,6 +113,7 @@ module "Grafana" {
   domain             = var.domain
   grafana_domain     = var.grafana_domain
   grafana_admin_user = var.grafana_admin_user
+  grafana_csp_policy = var.grafana_csp_policy
   domain_tls_key     = var.domain_tls_key
   domain_tls_crt     = var.domain_tls_crt
 
