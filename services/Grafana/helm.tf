@@ -19,7 +19,7 @@ resource "helm_release" "grafana" {
   values = [
     templatefile("${path.module}/artifacts/values.yaml", {
       domain = var.grafana_domain
-      csp_policy = var.grafana_csp_policy
+      # csp_policy = var.grafana_csp_policy
     })
   ]
 

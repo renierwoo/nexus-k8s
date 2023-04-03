@@ -60,7 +60,7 @@ variable "grafana_admin_user" {
   description = "The grafana admin user."
 }
 
-variable "grafana_csp_policy" {
-  type        = string
-  description = "The Grafana content security policy."
-}
+# variable "grafana_csp_policy" {
+#   type        = string
+#   description = "The Grafana content security policy."
+# }
