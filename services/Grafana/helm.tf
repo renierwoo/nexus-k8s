@@ -16,50 +16,11 @@ resource "helm_release" "grafana" {
     value = kubernetes_secret.grafana.metadata[0].name
   }
 
-  # set {
-  #   name  = "admin.userKey"
-  #   value = kubernetes_secret.grafana.data["admin-user"]
-  # }
-
-  # set {
-  #   name  = "admin.passwordKey"
-  #   value = kubernetes_secret.grafana.data["admin-password"]
-  # }
-
-  set {
-    name = "cookie_secure"
-    value = "true"
-  }
-
-  set {
-    name = "cookie_samesite"
-    value = "strict"
-  }
-
-  set {
-    name = "login_cookie_name"
-    value = "__Secure-grafana_session"
-  }
-
-  set {
-    name = "hide_version"
-    value = "true"
-  }
-
-  set {
-    name = "enforce_domain"
-    value = "true"
-  }
-
-  set {
-    name = "content_security_policy"
-    value = "true"
-  }
-
-  set {
-    name = "content_security_policy_template"
-    value = "default-src 'self'; script-src 'self' 'strict-dynamic' 'nonce-$${nonce}'; object-src 'none'; font-src 'self' https://fonts.gstatic.com/; img-src 'self'; style-src 'self' 'nonce-$${nonce}'; base-uri 'self'; frame-ancestors 'none'; block-all-mixed-content;"
-  }
+  values = [
+    templatefile("${path.module}/artifacts/values.yaml", {
+      domain = var.grafana_domain
+    })
+  ]
 
   depends_on = [kubernetes_secret.grafana]
 }
