@@ -95,31 +95,28 @@ module "IngressNginxController" {
 #   depends_on = [module.IngressNginxController]
 # }
 
-# module "Prometheus" {
-#   source = "./services/Prometheus"
+module "Prometheus" {
+  source = "./services/Prometheus"
 
-#   prometheus_release_name      = var.prometheus_release_name
-#   prometheus_repository        = var.prometheus_repository
-#   prometheus_chart             = var.prometheus_chart
-#   prometheus_chart_version     = var.prometheus_chart_version
-#   prometheus_release_namespace = var.prometheus_release_namespace
+  prometheus_release_name      = var.prometheus_release_name
+  prometheus_repository        = var.prometheus_repository
+  prometheus_chart             = var.prometheus_chart
+  prometheus_chart_version     = var.prometheus_chart_version
+  prometheus_release_namespace = var.prometheus_release_namespace
 
-#   prometheus_annotation_name = var.prometheus_annotation_name
-#   prometheus_label_k8s_name  = var.prometheus_label_k8s_name
-#   prometheus_namespace_name  = var.prometheus_namespace_name
+  prometheus_annotation_name = var.prometheus_annotation_name
+  prometheus_label_k8s_name  = var.prometheus_label_k8s_name
+  prometheus_namespace_name  = var.prometheus_namespace_name
 
-#   prometheus_server_image_tag = var.prometheus_server_image_tag
-#   # prometheus_server_storageClass   = var.prometheus_server_storageClass
-#   # prometheus_peristent_volume_name = var.prometheus_peristent_volume_name
-#   # node_name                        = var.node_name
+  prometheus_server_image_tag = var.prometheus_server_image_tag
 
-#   domain            = var.domain
-#   prometheus_domain = var.prometheus_domain
-#   domain_tls_key    = var.domain_tls_key
-#   domain_tls_crt    = var.domain_tls_crt
+  domain            = var.domain
+  prometheus_domain = var.prometheus_domain
+  domain_tls_key    = var.domain_tls_key
+  domain_tls_crt    = var.domain_tls_crt
 
-#   depends_on = [module.IngressNginxController]
-# }
+  depends_on = [module.IngressNginxController]
+}
 
 # module "Grafana" {
 #   source = "./services/Grafana"
