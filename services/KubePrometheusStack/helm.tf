@@ -12,7 +12,7 @@ resource "helm_release" "kube_prometheus_stack" {
   }
 
   set {
-    name  = "prometheusOperator.admissionWebhooks.patch.enabled"
+    name  = "prometheusOperator.admissionWebhooks.enabled"
     value = "false"
   }
 
@@ -33,4 +33,3 @@ resource "helm_release" "kube_prometheus_stack" {
 
   depends_on = [kubernetes_secret.grafana]
 }
-
