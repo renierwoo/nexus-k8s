@@ -11,10 +11,10 @@ resource "helm_release" "kube_prometheus_stack" {
     value = kubernetes_secret.grafana.metadata[0].name
   }
 
-  # set {
-  #   name  = "prometheusOperator.admissionWebhooks.enabled"
-  #   value = "false"
-  # }
+  set {
+    name  = "prometheusOperator.admissionWebhooks.patch.enabled"
+    value = "false"
+  }
 
   set {
     name  = "grafana.grafana.ini.server.domain"
