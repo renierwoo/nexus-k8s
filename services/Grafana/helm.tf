@@ -16,12 +16,12 @@ resource "helm_release" "grafana" {
     value = kubernetes_secret.grafana.metadata[0].name
   }
 
-  values = [
-    templatefile("${path.module}/artifacts/values.yaml", {
-      domain = var.grafana_domain
-      # csp_policy = var.grafana_csp_policy
-    })
-  ]
+  # values = [
+  #   templatefile("${path.module}/artifacts/values.yaml", {
+  #     domain = var.grafana_domain
+  #     # csp_policy = var.grafana_csp_policy
+  #   })
+  # ]
 
   # values = [
   #   "${file("${path.module}/artifacts/values.yaml")}"
