@@ -27,8 +27,6 @@ resource "kubernetes_ingress_v1" "grafana" {
               }
             }
           }
-          # path = "/prometheus/?(.*)"
-          # path = "/prometheus(/|$)(.*)"
           path      = "/"
           path_type = "Prefix"
         }
