@@ -182,39 +182,33 @@ variable "nginx_ic_prometheus_scheme" {}
 
 # variable "domain_tls_crt" {}
 
-# ############################
-# ### Prometheus variables ###
-# ############################
+############################
+### Prometheus variables ###
+############################
 
-# variable "prometheus_annotation_name" {}
+variable "prometheus_annotation_name" {}
 
-# variable "prometheus_label_k8s_name" {}
+variable "prometheus_label_k8s_name" {}
 
-# variable "prometheus_namespace_name" {}
+variable "prometheus_namespace_name" {}
 
-# variable "prometheus_release_name" {}
+variable "prometheus_release_name" {}
 
-# variable "prometheus_repository" {}
+variable "prometheus_repository" {}
 
-# variable "prometheus_chart" {}
+variable "prometheus_chart" {}
 
-# variable "prometheus_chart_version" {}
+variable "prometheus_chart_version" {}
 
-# variable "prometheus_release_namespace" {}
+variable "prometheus_release_namespace" {}
 
-# variable "prometheus_server_image_tag" {}
+variable "prometheus_server_image_tag" {}
 
-# # variable "prometheus_server_storageClass" {}
+variable "prometheus_domain" {}
 
-# # variable "prometheus_peristent_volume_name" {}
+variable "domain_tls_key" {}
 
-# # variable "node_name" {}
-
-# variable "prometheus_domain" {}
-
-# variable "domain_tls_key" {}
-
-# variable "domain_tls_crt" {}
+variable "domain_tls_crt" {}
 
 # ##################################
 # # Grafana Helm Chart's variables #
