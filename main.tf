@@ -73,52 +73,52 @@ module "IngressNginxController" {
   depends_on = [module.metal_lb]
 }
 
-module "Prometheus" {
-  source = "./services/Prometheus"
+# module "Prometheus" {
+#   source = "./services/Prometheus"
 
-  prometheus_release_name      = var.prometheus_release_name
-  prometheus_repository        = var.prometheus_repository
-  prometheus_chart             = var.prometheus_chart
-  prometheus_chart_version     = var.prometheus_chart_version
-  prometheus_release_namespace = var.prometheus_release_namespace
+#   prometheus_release_name      = var.prometheus_release_name
+#   prometheus_repository        = var.prometheus_repository
+#   prometheus_chart             = var.prometheus_chart
+#   prometheus_chart_version     = var.prometheus_chart_version
+#   prometheus_release_namespace = var.prometheus_release_namespace
 
-  prometheus_annotation_name = var.prometheus_annotation_name
-  prometheus_label_k8s_name  = var.prometheus_label_k8s_name
-  prometheus_namespace_name  = var.prometheus_namespace_name
+#   prometheus_annotation_name = var.prometheus_annotation_name
+#   prometheus_label_k8s_name  = var.prometheus_label_k8s_name
+#   prometheus_namespace_name  = var.prometheus_namespace_name
 
-  prometheus_server_image_tag = var.prometheus_server_image_tag
-  # prometheus_server_storageClass   = var.prometheus_server_storageClass
-  # prometheus_peristent_volume_name = var.prometheus_peristent_volume_name
-  # node_name                        = var.node_name
+#   prometheus_server_image_tag = var.prometheus_server_image_tag
+#   # prometheus_server_storageClass   = var.prometheus_server_storageClass
+#   # prometheus_peristent_volume_name = var.prometheus_peristent_volume_name
+#   # node_name                        = var.node_name
 
-  domain            = var.domain
-  prometheus_domain = var.prometheus_domain
-  domain_tls_key    = var.domain_tls_key
-  domain_tls_crt    = var.domain_tls_crt
+#   domain            = var.domain
+#   prometheus_domain = var.prometheus_domain
+#   domain_tls_key    = var.domain_tls_key
+#   domain_tls_crt    = var.domain_tls_crt
 
-  depends_on = [module.IngressNginxController]
-}
+#   depends_on = [module.IngressNginxController]
+# }
 
-module "Grafana" {
-  source = "./services/Grafana"
+# module "Grafana" {
+#   source = "./services/Grafana"
 
-  grafana_release_name      = var.grafana_release_name
-  grafana_repository        = var.grafana_repository
-  grafana_chart             = var.grafana_chart
-  grafana_chart_version     = var.grafana_chart_version
-  grafana_release_namespace = var.grafana_release_namespace
+#   grafana_release_name      = var.grafana_release_name
+#   grafana_repository        = var.grafana_repository
+#   grafana_chart             = var.grafana_chart
+#   grafana_chart_version     = var.grafana_chart_version
+#   grafana_release_namespace = var.grafana_release_namespace
 
-  grafana_server_image_tag = var.grafana_server_image_tag
+#   grafana_server_image_tag = var.grafana_server_image_tag
 
-  domain             = var.domain
-  grafana_domain     = var.grafana_domain
-  grafana_admin_user = var.grafana_admin_user
-  # grafana_csp_policy = var.grafana_csp_policy
-  domain_tls_key     = var.domain_tls_key
-  domain_tls_crt     = var.domain_tls_crt
+#   domain             = var.domain
+#   grafana_domain     = var.grafana_domain
+#   grafana_admin_user = var.grafana_admin_user
+#   # grafana_csp_policy = var.grafana_csp_policy
+#   domain_tls_key     = var.domain_tls_key
+#   domain_tls_crt     = var.domain_tls_crt
 
-  depends_on = [module.Prometheus]
-}
+#   depends_on = [module.Prometheus]
+# }
 
 module "WireGuard" {
   source = "./services/WireGuard"
