@@ -12,6 +12,11 @@ resource "helm_release" "kube_prometheus_stack" {
   }
 
   set {
+    name  = "prometheusOperator.admissionWebhooks.enabled"
+    value = "false"
+  }
+
+  set {
     name  = "grafana.grafana.ini.server.domain"
     value = var.grafana_domain
   }
