@@ -154,33 +154,33 @@ variable "nginx_ic_prometheus_port" {}
 
 variable "nginx_ic_prometheus_scheme" {}
 
-#######################################
-### Kube Prometheus Stack variables ###
-#######################################
+# #######################################
+# ### Kube Prometheus Stack variables ###
+# #######################################
 
-variable "kps_annotation" {}
+# variable "kps_annotation" {}
 
-variable "kps_label_k8s" {}
+# variable "kps_label_k8s" {}
 
-variable "kps_namespace" {}
+# variable "kps_namespace" {}
 
-variable "kps_release" {}
+# variable "kps_release" {}
 
-variable "kps_repository" {}
+# variable "kps_repository" {}
 
-variable "kps_chart" {}
+# variable "kps_chart" {}
 
-variable "kps_chart_version" {}
+# variable "kps_chart_version" {}
 
-variable "kps_release_namespace" {}
+# variable "kps_release_namespace" {}
 
-variable "grafana_domain" {}
+# variable "grafana_domain" {}
 
-variable "grafana_admin_user" {}
+# variable "grafana_admin_user" {}
 
-variable "domain_tls_key" {}
+# variable "domain_tls_key" {}
 
-variable "domain_tls_crt" {}
+# variable "domain_tls_crt" {}
 
 # ############################
 # ### Prometheus variables ###
