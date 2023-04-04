@@ -73,6 +73,28 @@ module "IngressNginxController" {
   depends_on = [module.metal_lb]
 }
 
+module "KubePrometheusStack" {
+  source = "./services/KubePrometheusStack"
+
+  kps_annotation = var.kps_annotation
+  kps_label_k8s  = var.kps_label_k8s
+  kps_namespace  = var.kps_namespace
+
+  kps_release           = var.kps_release
+  kps_repository        = var.kps_repository
+  kps_chart             = var.kps_chart
+  kps_chart_version     = var.kps_chart_version
+  kps_release_namespace = var.kps_release_namespace
+
+  domain             = var.domain
+  grafana_domain     = var.grafana_domain
+  grafana_admin_user = var.grafana_admin_user
+  domain_tls_key     = var.domain_tls_key
+  domain_tls_crt     = var.domain_tls_crt
+
+  depends_on = [module.IngressNginxController]
+}
+
 # module "Prometheus" {
 #   source = "./services/Prometheus"
 
