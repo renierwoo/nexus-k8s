@@ -33,3 +33,4 @@ resource "helm_release" "kube_prometheus_stack" {
 
   depends_on = [kubernetes_secret.grafana]
 }
+
