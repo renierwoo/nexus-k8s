@@ -154,61 +154,61 @@ variable "nginx_ic_prometheus_port" {}
 
 variable "nginx_ic_prometheus_scheme" {}
 
-############################
-### Prometheus variables ###
-############################
+# ############################
+# ### Prometheus variables ###
+# ############################
 
-variable "prometheus_annotation_name" {}
+# variable "prometheus_annotation_name" {}
 
-variable "prometheus_label_k8s_name" {}
+# variable "prometheus_label_k8s_name" {}
 
-variable "prometheus_namespace_name" {}
+# variable "prometheus_namespace_name" {}
 
-variable "prometheus_release_name" {}
+# variable "prometheus_release_name" {}
 
-variable "prometheus_repository" {}
+# variable "prometheus_repository" {}
 
-variable "prometheus_chart" {}
+# variable "prometheus_chart" {}
 
-variable "prometheus_chart_version" {}
+# variable "prometheus_chart_version" {}
 
-variable "prometheus_release_namespace" {}
+# variable "prometheus_release_namespace" {}
 
-variable "prometheus_server_image_tag" {}
+# variable "prometheus_server_image_tag" {}
 
-# variable "prometheus_server_storageClass" {}
+# # variable "prometheus_server_storageClass" {}
 
-# variable "prometheus_peristent_volume_name" {}
+# # variable "prometheus_peristent_volume_name" {}
 
-# variable "node_name" {}
+# # variable "node_name" {}
 
-variable "prometheus_domain" {}
+# variable "prometheus_domain" {}
 
-variable "domain_tls_key" {}
+# variable "domain_tls_key" {}
 
-variable "domain_tls_crt" {}
+# variable "domain_tls_crt" {}
 
-##################################
-# Grafana Helm Chart's variables #
-##################################
+# ##################################
+# # Grafana Helm Chart's variables #
+# ##################################
 
-variable "grafana_release_name" {}
+# variable "grafana_release_name" {}
 
-variable "grafana_repository" {}
+# variable "grafana_repository" {}
 
-variable "grafana_chart" {}
+# variable "grafana_chart" {}
 
-variable "grafana_chart_version" {}
+# variable "grafana_chart_version" {}
 
-variable "grafana_release_namespace" {}
+# variable "grafana_release_namespace" {}
 
-variable "grafana_server_image_tag" {}
+# variable "grafana_server_image_tag" {}
 
-variable "grafana_domain" {}
+# variable "grafana_domain" {}
 
-variable "grafana_admin_user" {}
+# variable "grafana_admin_user" {}
 
-# variable "grafana_csp_policy" {}
+# # variable "grafana_csp_policy" {}
 
 ###########################
 ### WireGuard variables ###
