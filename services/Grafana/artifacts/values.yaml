@@ -9,4 +9,4 @@ grafana.ini:
     # hide_version: "true"
     # enforce_domain: "true"
     content_security_policy: "true"
-    content_security_policy_template: "\"\"\"default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none'; font-src 'self' https://fonts.gstatic.com/; img-src 'self' data:; style-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; base-uri 'self'; base-uri 'self'; connect-src 'self' grafana.com ws: wss:; manifest-src 'self'; media-src 'none'; form-action 'self'; frame-ancestors 'none'; block-all-mixed-content;\"\"\""
+    content_security_policy_template: "\"\"\"default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none'; font-src 'self' https://fonts.gstatic.com/; img-src 'self' https://grafana.com data:; style-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; base-uri 'self'; connect-src 'self' https://grafana.com ws: wss:; manifest-src 'self'; media-src 'none'; form-action 'self'; frame-ancestors 'none'; block-all-mixed-content;\"\"\""
