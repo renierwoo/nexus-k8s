@@ -118,26 +118,26 @@ module "Prometheus" {
   depends_on = [module.IngressNginxController]
 }
 
-# module "Grafana" {
-#   source = "./services/Grafana"
+module "Grafana" {
+  source = "./services/Grafana"
 
-#   grafana_release_name      = var.grafana_release_name
-#   grafana_repository        = var.grafana_repository
-#   grafana_chart             = var.grafana_chart
-#   grafana_chart_version     = var.grafana_chart_version
-#   grafana_release_namespace = var.grafana_release_namespace
+  grafana_release_name      = var.grafana_release_name
+  grafana_repository        = var.grafana_repository
+  grafana_chart             = var.grafana_chart
+  grafana_chart_version     = var.grafana_chart_version
+  grafana_release_namespace = var.grafana_release_namespace
 
-#   grafana_server_image_tag = var.grafana_server_image_tag
+  grafana_server_image_tag = var.grafana_server_image_tag
 
-#   domain             = var.domain
-#   grafana_domain     = var.grafana_domain
-#   grafana_admin_user = var.grafana_admin_user
-#   # grafana_csp_policy = var.grafana_csp_policy
-#   domain_tls_key     = var.domain_tls_key
-#   domain_tls_crt     = var.domain_tls_crt
+  domain             = var.domain
+  grafana_domain     = var.grafana_domain
+  grafana_admin_user = var.grafana_admin_user
+  # grafana_csp_policy = var.grafana_csp_policy
+  domain_tls_key     = var.domain_tls_key
+  domain_tls_crt     = var.domain_tls_crt
 
-#   depends_on = [module.Prometheus]
-# }
+  depends_on = [module.Prometheus]
+}
 
 module "WireGuard" {
   source = "./services/WireGuard"
