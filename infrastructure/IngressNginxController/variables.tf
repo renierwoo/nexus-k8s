@@ -67,8 +67,41 @@ variable "nginx_ic_controller_image_tag" {
   description = "The tag of the Ingress Controller image."
 }
 
+variable "nginx_ic_controller_mirror_registry" {
+  type        = string
+  description = "The mirror registry of the Ingress Controller image."
+}
+
+variable "nginx_ic_controller_image" {
+  type        = string
+  description = "The name of the Ingress Controller image."
+}
+
+variable "nginx_ic_controller_digest" {
+  type        = string
+  description = "The digest of the Ingress Controller image."
+}
+
 variable "nginx_ic_metrics_enabled" {
   type        = string
   default     = "false"
   description = "Expose NGINX metrics in the Prometheus format."
+}
+
+variable "nginx_ic_admissionWebhooks_mirror_registry" {
+  type        = string
+  default     = "false"
+  description = "The mirror registry of the admissionWebhooks image."
+}
+
+variable "nginx_ic_admissionWebhooks_image" {
+  type        = string
+  default     = "false"
+  description = "The name of the admissionWebhooks image."
+}
+
+variable "nginx_ic_admissionWebhooks_digest" {
+  type        = string
+  default     = "false"
+  description = "The digest of the admissionWebhooks image."
 }
