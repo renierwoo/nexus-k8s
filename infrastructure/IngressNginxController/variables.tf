@@ -67,38 +67,8 @@ variable "nginx_ic_controller_image_tag" {
   description = "The tag of the Ingress Controller image."
 }
 
-variable "nginx_ic_controller_replicaCount" {
-  type        = string
-  default     = "1"
-  description = "The number of replicas of the Ingress Controller deployment."
-}
-
-variable "nginx_ic_controller_terminationGracePeriodSeconds" {
-  type        = string
-  default     = "30"
-  description = "The termination grace period of the Ingress Controller pod."
-}
-
-variable "nginx_ic_controller_enableLatencyMetrics" {
+variable "nginx_ic_metrics_enabled" {
   type        = string
   default     = "false"
-  description = "Enable collection of latency metrics for upstreams. Requires prometheus.create."
-}
-
-variable "nginx_ic_prometheus_create" {
-  type        = string
-  default     = "false"
-  description = "Expose NGINX or NGINX Plus metrics in the Prometheus format."
-}
-
-variable "nginx_ic_prometheus_port" {
-  type        = string
-  default     = "10254"
-  description = "Configures the port to scrape the metrics."
-}
-
-variable "nginx_ic_prometheus_scheme" {
-  type        = string
-  default     = "http"
-  description = "Configures the HTTP scheme to use for connections to the Prometheus endpoint."
+  description = "Expose NGINX metrics in the Prometheus format."
 }

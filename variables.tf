@@ -142,17 +142,7 @@ variable "nginx_ic_controller_kind" {}
 
 variable "nginx_ic_controller_image_tag" {}
 
-variable "nginx_ic_controller_replicaCount" {}
-
-variable "nginx_ic_controller_terminationGracePeriodSeconds" {}
-
-variable "nginx_ic_controller_enableLatencyMetrics" {}
-
-variable "nginx_ic_prometheus_create" {}
-
-variable "nginx_ic_prometheus_port" {}
-
-variable "nginx_ic_prometheus_scheme" {}
+variable "nginx_ic_metrics_enabled" {}
 
 # #######################################
 # ### Kube Prometheus Stack variables ###

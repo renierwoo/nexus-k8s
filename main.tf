@@ -61,14 +61,9 @@ module "IngressNginxController" {
   nginx_ic_label_k8s_name  = var.nginx_ic_label_k8s_name
   nginx_ic_namespace_name  = var.nginx_ic_namespace_name
 
-  nginx_ic_controller_kind                          = var.nginx_ic_controller_kind
-  nginx_ic_controller_image_tag                     = var.nginx_ic_controller_image_tag
-  nginx_ic_controller_replicaCount                  = var.nginx_ic_controller_replicaCount
-  nginx_ic_controller_terminationGracePeriodSeconds = var.nginx_ic_controller_terminationGracePeriodSeconds
-  nginx_ic_controller_enableLatencyMetrics          = var.nginx_ic_controller_enableLatencyMetrics
-  nginx_ic_prometheus_create                        = var.nginx_ic_prometheus_create
-  nginx_ic_prometheus_port                          = var.nginx_ic_prometheus_port
-  nginx_ic_prometheus_scheme                        = var.nginx_ic_prometheus_scheme
+  nginx_ic_controller_kind      = var.nginx_ic_controller_kind
+  nginx_ic_controller_image_tag = var.nginx_ic_controller_image_tag
+  nginx_ic_metrics_enabled      = var.nginx_ic_metrics_enabled
 
   depends_on = [module.metal_lb]
 }
@@ -133,8 +128,8 @@ module "Grafana" {
   grafana_domain     = var.grafana_domain
   grafana_admin_user = var.grafana_admin_user
   # grafana_csp_policy = var.grafana_csp_policy
-  domain_tls_key     = var.domain_tls_key
-  domain_tls_crt     = var.domain_tls_crt
+  domain_tls_key = var.domain_tls_key
+  domain_tls_crt = var.domain_tls_crt
 
   depends_on = [module.Prometheus]
 }
