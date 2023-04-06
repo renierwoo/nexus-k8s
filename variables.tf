@@ -144,6 +144,18 @@ variable "nginx_ic_controller_image_tag" {}
 
 variable "nginx_ic_metrics_enabled" {}
 
+variable "nginx_ic_controller_mirror_registry" {}
+
+variable "nginx_ic_controller_image" {}
+
+variable "nginx_ic_controller_digest" {}
+
+variable "nginx_ic_admissionWebhooks_mirror_registry" {}
+
+variable "nginx_ic_admissionWebhooks_image" {}
+
+variable "nginx_ic_admissionWebhooks_digest" {}
+
 # #######################################
 # ### Kube Prometheus Stack variables ###
 # #######################################

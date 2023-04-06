@@ -65,6 +65,13 @@ module "IngressNginxController" {
   nginx_ic_controller_image_tag = var.nginx_ic_controller_image_tag
   nginx_ic_metrics_enabled      = var.nginx_ic_metrics_enabled
 
+  nginx_ic_controller_mirror_registry = var.nginx_ic_controller_mirror_registry
+  nginx_ic_controller_image = var.nginx_ic_controller_image
+  nginx_ic_controller_digest = var.nginx_ic_controller_digest
+  nginx_ic_admissionWebhooks_mirror_registry = var.nginx_ic_admissionWebhooks_mirror_registry
+  nginx_ic_admissionWebhooks_image = var.nginx_ic_admissionWebhooks_image
+  nginx_ic_admissionWebhooks_digest = var.nginx_ic_admissionWebhooks_digest
+
   depends_on = [module.metal_lb]
 }
 
