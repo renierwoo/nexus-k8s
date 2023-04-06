@@ -27,37 +27,12 @@ resource "helm_release" "ingress_nginx_controller" {
   }
 
   set {
-    name  = "controller.replicaCount"
-    value = var.nginx_ic_controller_replicaCount
-  }
-
-  set {
-    name  = "controller.terminationGracePeriodSeconds"
-    value = var.nginx_ic_controller_terminationGracePeriodSeconds
-  }
-
-  set {
-    name  = "controller.externalTrafficPolicy"
+    name  = "controller.service.externalTrafficPolicy"
     value = "Local"
   }
 
   set {
-    name  = "controller.enableLatencyMetrics"
-    value = var.nginx_ic_controller_enableLatencyMetrics
-  }
-
-  set {
-    name  = "prometheus.create"
-    value = var.nginx_ic_prometheus_create
-  }
-
-  set {
-    name  = "prometheus.port"
-    value = var.nginx_ic_prometheus_port
-  }
-
-  set {
-    name  = "prometheus.scheme"
-    value = var.nginx_ic_prometheus_scheme
+    name  = "controller.metrics.enabled"
+    value = var.nginx_ic_metrics_enabled
   }
 }
