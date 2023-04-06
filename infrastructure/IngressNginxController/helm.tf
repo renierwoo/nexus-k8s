@@ -52,6 +52,16 @@ resource "helm_release" "ingress_nginx_controller" {
   }
 
   set {
+    name  = "controller.podAnnotations.prometheus.io/scrape"
+    value = "true"
+  }
+
+  set {
+    name  = "controller.podAnnotations.prometheus.io/port"
+    value = "10254"
+  }
+
+  set {
     name = "controller.admissionWebhooks.patch.image.registry"
     value = var.nginx_ic_admissionWebhooks_mirror_registry
   }
