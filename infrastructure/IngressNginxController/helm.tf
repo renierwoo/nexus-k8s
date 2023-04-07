@@ -52,12 +52,12 @@ resource "helm_release" "ingress_nginx_controller" {
   }
 
   set {
-    name  = "controller.podAnnotations.prometheus.io/scrape"
+    name  = "controller.podAnnotations.prometheus\\.io/scrape"
     value = "true"
   }
 
   set {
-    name  = "controller.podAnnotations.prometheus.io/port"
+    name  = "controller.podAnnotations.prometheus\\.io/port"
     value = "10254"
   }
 
