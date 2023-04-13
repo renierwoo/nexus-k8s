@@ -40,7 +40,7 @@ resource "kubernetes_deployment" "wireguard_deployment" {
           security_context {
             capabilities {
               drop = ["ALL"]
-              add  = ["NET_ADMIN"]
+              add  = ["NET_ADMIN", "NET_RAW"]
             }
 
             allow_privilege_escalation = false
