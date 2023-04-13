@@ -25,20 +25,22 @@ resource "kubernetes_deployment" "wireguard_deployment" {
 
       spec {
         security_context {
+          run_as_non_root = true
           sysctl {
-            name = "net.ipv4.ip_forward"
+            name  = "net.ipv4.ip_forward"
             value = "1"
           }
         }
 
         container {
-          name  = "wireguard-server"
-          image = "wootechspace/wireguard-server:1.0.1-alpine"
+          name              = "wireguard-server"
+          image             = "wootechspace/wireguard-server:1.0.1-alpine"
           image_pull_policy = "Always"
 
           security_context {
             capabilities {
-              add = ["NET_ADMIN"]
+              drop = ["ALL"]
+              add  = ["NET_ADMIN"]
             }
 
             allow_privilege_escalation = false
@@ -95,7 +97,7 @@ resource "kubernetes_deployment" "wireguard_deployment" {
           name = "wireguard-server-config"
 
           secret {
-            secret_name = kubernetes_secret.wireguard_secrets.metadata[0].name
+            secret_name  = kubernetes_secret.wireguard_secrets.metadata[0].name
             default_mode = "0400"
           }
         }
