@@ -33,7 +33,7 @@ resource "kubernetes_deployment" "wireguard_deployment" {
 
         container {
           name  = "wireguard-server"
-          image = "wootechspace/wireguard-server:1.0.0-alpine"
+          image = "wootechspace/wireguard-server:1.0.1-alpine"
           image_pull_policy = "Always"
 
           security_context {

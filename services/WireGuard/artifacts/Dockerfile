@@ -2,7 +2,7 @@ FROM alpine:3.17.3
 
 # Labels.
 LABEL Maintainer="Renier Collazo Woo" \
-      Description="WireGuard VPN on top of Alpine Linux v3.17.2"
+      Description="WireGuard VPN on top of Alpine Linux v3.17.3"
 
 # Install dependencies.
 RUN set -euxo pipefail; \
@@ -21,4 +21,4 @@ EXPOSE 31777/udp
 # CMD.
 CMD ["entrypoint.sh"]
 
-# wootechspace/wireguard-server:1.0.0-alpine
+# wootechspace/wireguard-server:1.0.1-alpine
