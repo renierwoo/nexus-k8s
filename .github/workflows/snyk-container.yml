@@ -44,11 +44,7 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         image: your/image-to-test
-        args: --file=Dockerfile --sarif-file-output=snyk.sarif
-    - name: Verifying snyk.sarif files
-      run: |
-        pwd
-        ls -lha
+        args: --file=services/WireGuard/artifacts/Dockerfile
     - name: Upload result to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v2
       with:
