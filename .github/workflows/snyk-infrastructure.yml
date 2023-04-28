@@ -44,16 +44,11 @@ jobs:
           # For example `deployment.yaml` for a Kubernetes deployment manifest
           # or `main.tf` for a Terraform configuration file
           #file: your-file-to-test.yaml
-          args: --severity-threshold=low
+          args: --severity-threshold=low --sarif-file /github/workspace/snyk.sarif
       - name: Check for snyk.serif file
         run: |
           pwd
           ls -lha
-          ls -lha /home/runner/work/_temp/_github_home
-          echo KKKKKKKKKKKKKKKKKKKKKKKKKKKK
-          ls -lha /home/runner/work/_temp/_github_workflow
-          echo UUUUUUUUUUUUUUUUUUUUUUUUUUUU
-          ls -lha /home/runner/work/_temp/_runner_file_commands
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
         with:
