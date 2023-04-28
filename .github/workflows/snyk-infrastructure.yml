@@ -44,14 +44,15 @@ jobs:
           # For example `deployment.yaml` for a Kubernetes deployment manifest
           # or `main.tf` for a Terraform configuration file
           #file: your-file-to-test.yaml
-          args: --serif-file-output=./snyk-iac.sarif
-      - name: Check for snyk-iac.serif file
+          args: --severity-threshold=low
+      - name: Check for snyk.serif file
         run: |
           pwd
           ls -lha
-          ls -lha ./
-          sudo find / -iname "synk-iac.serif"
+          sudo find / -iname "synk.serif"
+          echo Hello
+          find / -iname "synk.serif"
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: snyk-iac.sarif
+          sarif_file: snyk.sarif
