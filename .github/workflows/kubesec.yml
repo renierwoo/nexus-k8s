@@ -34,20 +34,18 @@ jobs:
         uses: controlplaneio/kubesec-action@43d0ddff5ffee89a6bb9f29b64cd865411137b14
         with:
           input: infrastructure/Calico/artifacts/custom-resources.yaml # specify configuration file to scan here
-          format: template
-          template: template/sarif.tpl
-          #output: kubesec-results.sarif
-          output: kubesec.sarif
+          #format: template
+          format: sarif
+          #template: template/sarif.tpl
+          output: kubesec-results.sarif
           exit-code: "0"
 
-      - name: Test kubesec.sarif
+      - name: Test kubesec-results.sarif
         run: |
-          pwd
           ls -lha
-          cat kubesec.sarif
+          cat kubesec-results.sarif
 
       - name: Upload Kubesec scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         with:
-          #sarif_file: kubesec-results.sarif
-          sarif_file: kubesec.sarif
+          sarif_file: kubesec-results.sarif
