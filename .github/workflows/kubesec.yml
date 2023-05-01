@@ -35,7 +35,7 @@ jobs:
         with:
           input: infrastructure/Calico/artifacts/custom-resources.yaml # specify configuration file to scan here
           format: template
-          template: templates/sarif.tpl
+          template: /templates/sarif.tpl
           output: kubesec-results.sarif
           exit-code: "0"
 
