@@ -41,6 +41,7 @@ jobs:
 
       - name: Test kubesec-results.sarif
         run: |
+          pwd
           ls -lha
           cat kubesec-results.sarif
 
