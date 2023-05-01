@@ -22,18 +22,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      #- name: Collect all yaml
-        #run: find . -type f -name "*.yaml" -exec sh -c "echo '---' | cat - {}" \; > all.yaml
-
-      #- name: Test all.yaml
-        #run: |
-          #ls -lha
-          #cat all.yaml
+      - name: Collect all yaml
+        run: find . -type f -name "*.yaml" -exec sh -c "echo '---' | cat - {}" \; > all.yaml
 
       - name: Run kubesec scanner
         uses: controlplaneio/kubesec-action@43d0ddff5ffee89a6bb9f29b64cd865411137b14
         with:
-          input: infrastructure/Calico/artifacts/custom-resources.yaml # specify configuration file to scan here
+          input: all.yaml # specify configuration file to scan here
           format: template
           template: /templates/sarif.tpl
           output: kubesec-results.sarif
