@@ -11,7 +11,6 @@ resource "kubernetes_storage_class_v1" "jenkins_controller" {
 resource "kubernetes_persistent_volume_v1" "jenkins_controller" {
   metadata {
     name      = "jenkins-controller-pv"
-    namespace = var.jenkins_controller_release_namespace
   }
 
   spec {
@@ -23,7 +22,7 @@ resource "kubernetes_persistent_volume_v1" "jenkins_controller" {
 
     access_modes = ["ReadWriteOnce"]
 
-    hostpath {
+    host_path {
       path = "/mnt/jenkins-controller-volume"
     }
 
