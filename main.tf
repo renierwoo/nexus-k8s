@@ -65,12 +65,12 @@ module "IngressNginxController" {
   nginx_ic_controller_image_tag = var.nginx_ic_controller_image_tag
   nginx_ic_metrics_enabled      = var.nginx_ic_metrics_enabled
 
-  nginx_ic_controller_mirror_registry = var.nginx_ic_controller_mirror_registry
-  nginx_ic_controller_image = var.nginx_ic_controller_image
-  nginx_ic_controller_digest = var.nginx_ic_controller_digest
+  nginx_ic_controller_mirror_registry        = var.nginx_ic_controller_mirror_registry
+  nginx_ic_controller_image                  = var.nginx_ic_controller_image
+  nginx_ic_controller_digest                 = var.nginx_ic_controller_digest
   nginx_ic_admissionWebhooks_mirror_registry = var.nginx_ic_admissionWebhooks_mirror_registry
-  nginx_ic_admissionWebhooks_image = var.nginx_ic_admissionWebhooks_image
-  nginx_ic_admissionWebhooks_digest = var.nginx_ic_admissionWebhooks_digest
+  nginx_ic_admissionWebhooks_image           = var.nginx_ic_admissionWebhooks_image
+  nginx_ic_admissionWebhooks_digest          = var.nginx_ic_admissionWebhooks_digest
 
   depends_on = [module.metal_lb]
 }
@@ -150,6 +150,25 @@ module "WireGuard" {
 
   domain           = var.domain
   wireguard_domain = var.wireguard_domain
+
+  depends_on = [module.IngressNginxController]
+}
+
+module "Jenkins" {
+  source = "./services/Jenkins"
+
+  domain                               = var.domain
+  jenkins_controller_domain            = var.jenkins_controller_domain
+  domain_tls_key                       = var.domain_tls_key
+  domain_tls_crt                       = var.domain_tls_crt
+  jenkins_controller_release_name      = var.jenkins_controller_release_name
+  jenkins_controller_repository        = var.jenkins_controller_repository
+  jenkins_controller_chart             = var.jenkins_controller_chart
+  jenkins_controller_chart_version     = var.jenkins_controller_chart_version
+  jenkins_controller_release_namespace = var.jenkins_controller_release_namespace
+  jenkins_controller_image_tag         = var.jenkins_controller_image_tag
+  jenkins_controller_admin_user        = var.jenkins_controller_admin_user
+  jenkins_controller_admin_password    = var.jenkins_controller_admin_password
 
   depends_on = [module.IngressNginxController]
 }
