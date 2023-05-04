@@ -65,7 +65,7 @@ resource "helm_release" "jenkins_controller" {
     name  = "controller.ingress.tls"
     value = jsonencode([
       {
-        secretName = kubernetes_secret_v1.jenkins_controller_ingress.metadata.0.name
+        secretName = kubernetes_secret_v1.jenkins_controller_ingress.metadata[0].name
         hosts      = [var.domain]
       }
     ])
