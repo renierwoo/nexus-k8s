@@ -42,11 +42,6 @@ resource "helm_release" "jenkins_controller" {
   }
 
   set {
-    name  = "controller.prometheus.enabled"
-    value = "true"
-  }
-
-  set {
     name  = "controller.ingress.enabled"
     value = "true"
   }
