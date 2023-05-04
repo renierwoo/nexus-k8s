@@ -4,7 +4,7 @@ resource "kubernetes_storage_class_v1" "jenkins_controller" {
   }
 
   storage_provisioner = "kubernetes.io/no-provisioner"
-  # reclaim_policy      = "Retain"
+  reclaim_policy      = "Retain"
   volume_binding_mode = "WaitForFirstConsumer"
 }
 
@@ -28,10 +28,10 @@ resource "kubernetes_persistent_volume_v1" "jenkins_controller" {
 
     persistent_volume_source {
       host_path {
-        path = "/mnt/data"
+        path = "/mnt/jenkins-controller-volume"
       }
     }
 
-    # persistent_volume_reclaim_policy = "Retain"
+    persistent_volume_reclaim_policy = "Retain"
   }
 }
