@@ -61,15 +61,12 @@ resource "helm_release" "jenkins_controller" {
     value = var.jenkins_controller_domain
   }
 
-  set_sensitive {
-    name  = "controller.ingress.tls"
-    value = jsonencode([
-      {
-        secretName = kubernetes_secret_v1.jenkins_controller_ingress.metadata[0].name
-        hosts      = [var.domain]
-      }
-    ])
-  }
+  values = [
+    templatefile("${path.module}/artifacts/values.yaml", {
+      domain = var.domain
+      secretName = kubernetes_secret_v1.jenkins_controller_ingress.metadata.0.name
+    })
+  ]
 
   set {
     name  = "persistence.storageClass"
