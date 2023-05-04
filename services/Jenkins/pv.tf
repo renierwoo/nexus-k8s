@@ -1,16 +1,20 @@
 resource "kubernetes_storage_class_v1" "jenkins_controller" {
   metadata {
-    name      = "jenkins-controller-pv"
+    name = "jenkins-controller-pv"
   }
 
   storage_provisioner = "kubernetes.io/no-provisioner"
-  reclaim_policy      = "Retain"
+  # reclaim_policy      = "Retain"
   volume_binding_mode = "WaitForFirstConsumer"
 }
 
 resource "kubernetes_persistent_volume_v1" "jenkins_controller" {
   metadata {
-    name      = "jenkins-controller-pv"
+    name = "jenkins-controller-pv"
+
+    labels = {
+      type = "local"
+    }
   }
 
   spec {
@@ -24,10 +28,10 @@ resource "kubernetes_persistent_volume_v1" "jenkins_controller" {
 
     persistent_volume_source {
       host_path {
-        path = "/mnt/jenkins-controller-volume"
+        path = "/mnt/data"
       }
     }
 
-    persistent_volume_reclaim_policy = "Retain"
+    # persistent_volume_reclaim_policy = "Retain"
   }
 }
