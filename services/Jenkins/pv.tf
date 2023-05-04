@@ -1,7 +1,6 @@
 resource "kubernetes_storage_class_v1" "jenkins_controller" {
   metadata {
     name      = "jenkins-controller-pv"
-    namespace = var.jenkins_controller_release_namespace
   }
 
   storage_provisioner = "kubernetes.io/no-provisioner"
