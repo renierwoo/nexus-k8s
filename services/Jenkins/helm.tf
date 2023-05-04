@@ -62,12 +62,12 @@ resource "helm_release" "jenkins_controller" {
   }
 
   set {
-    name  = "controller.ingress.tls.secretName"
+    name  = "controller.ingress.tls[0]"
     value = kubernetes_secret_v1.jenkins_controller_ingress.metadata.0.name
   }
 
   set {
-    name  = "controller.ingress.tls.hosts"
+    name  = "controller.ingress.tls[1]"
     value = var.domain
   }
 
