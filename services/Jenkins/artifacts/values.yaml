@@ -1,0 +1,6 @@
+controller:
+  ingress:
+    tls:
+      - secretName: "${secretName}"
+        hosts:
+          - "${domain}"
