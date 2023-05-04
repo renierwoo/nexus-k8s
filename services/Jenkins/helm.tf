@@ -36,11 +36,6 @@ resource "helm_release" "jenkins_controller" {
     value = var.jenkins_controller_admin_password
   }
 
-  # set {
-  #   name  = "controller.serviceExternalTrafficPolicy"
-  #   value = "Local"
-  # }
-
   set {
     name  = "controller.ingress.enabled"
     value = "true"
