@@ -67,7 +67,7 @@ resource "helm_release" "jenkins_controller" {
   }
 
   set {
-    name  = "controller.ingress.tls.hosts[0]"
+    name  = "controller.ingress.tls.hosts"
     value = var.domain
   }
 
