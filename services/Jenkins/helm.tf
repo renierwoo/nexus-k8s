@@ -65,6 +65,7 @@ resource "helm_release" "jenkins_controller" {
     templatefile("${path.module}/artifacts/values.yaml", {
       domain = var.domain
       secretName = kubernetes_secret_v1.jenkins_controller_ingress.metadata.0.name
+      CustomInitContainerImage = "alpine:3.17"
     })
   ]
 
