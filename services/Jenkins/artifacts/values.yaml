@@ -5,7 +5,7 @@ controller:
         hosts:
           - "${domain}"
   customInitContainers:
-    - name: "PV Permissions"
+    - name: "volume-permissions"
       image: "${CustomInitContainerImage}"
       imagePullPolicy: "Always"
       command: ["sh", "-c", "chown -R 1000:1000 /var/jenkins_home"]
