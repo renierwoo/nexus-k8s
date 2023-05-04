@@ -22,8 +22,10 @@ resource "kubernetes_persistent_volume_v1" "jenkins_controller" {
 
     access_modes = ["ReadWriteOnce"]
 
-    host_path {
-      path = "/mnt/jenkins-controller-volume"
+    persistent_volume_source {
+      host_path {
+        path = "/mnt/jenkins-controller-volume"
+      }
     }
 
     persistent_volume_reclaim_policy = "Retain"
