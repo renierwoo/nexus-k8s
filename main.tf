@@ -164,6 +164,7 @@ module "Jenkins" {
   jenkins_controller_release_name      = var.jenkins_controller_release_name
   jenkins_controller_repository        = var.jenkins_controller_repository
   jenkins_controller_chart             = var.jenkins_controller_chart
+  jenkins_controller_chart_version     = var.jenkins_controller_chart_version
   jenkins_controller_release_namespace = var.jenkins_controller_release_namespace
   jenkins_controller_image_tag         = var.jenkins_controller_image_tag
   jenkins_controller_admin_user        = var.jenkins_controller_admin_user
