@@ -4,3 +4,11 @@ controller:
       - secretName: "${secretName}"
         hosts:
           - "${domain}"
+  customInitContainers:
+    - name: "PV Permissions"
+      image: "${CustomInitContainerImage}"
+      imagePullPolicy: "Always"
+      command: ["sh", "-c", "chown -R 1000:1000 /var/jenkins_home"]
+      volumeMounts:
+        - name: jenkins-home
+          mountPath: /var/jenkins_home
