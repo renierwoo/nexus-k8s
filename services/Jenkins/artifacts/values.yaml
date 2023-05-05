@@ -12,3 +12,6 @@ controller:
       volumeMounts:
         - name: jenkins-home
           mountPath: /var/jenkins_home
+      securityContext:
+        - capabilities:
+            add: ["CAP_CHOWN"]
