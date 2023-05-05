@@ -246,24 +246,24 @@ variable "wireguard_peers" {}
 
 variable "wireguard_domain" {}
 
-####################################
-### Jenkins Controller variables ###
-####################################
+# ####################################
+# ### Jenkins Controller variables ###
+# ####################################
 
-variable "jenkins_controller_domain" {}
+# variable "jenkins_controller_domain" {}
 
-variable "jenkins_controller_release_name" {}
+# variable "jenkins_controller_release_name" {}
 
-variable "jenkins_controller_repository" {}
+# variable "jenkins_controller_repository" {}
 
-variable "jenkins_controller_chart" {}
+# variable "jenkins_controller_chart" {}
 
-variable "jenkins_controller_chart_version" {}
+# variable "jenkins_controller_chart_version" {}
 
-variable "jenkins_controller_release_namespace" {}
+# variable "jenkins_controller_release_namespace" {}
 
-variable "jenkins_controller_image_tag" {}
+# variable "jenkins_controller_image_tag" {}
 
-variable "jenkins_controller_admin_user" {}
+# variable "jenkins_controller_admin_user" {}
 
-variable "jenkins_controller_admin_password" {}
+# variable "jenkins_controller_admin_password" {}
