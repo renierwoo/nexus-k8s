@@ -13,6 +13,5 @@ controller:
         - name: jenkins-home
           mountPath: /var/jenkins_home
       securityContext:
-        capabilities:
-          add:
-            - "CAP_CHOWN"
+        runAsUser: 0
+        runAsGroup: 0
