@@ -4,15 +4,15 @@ controller:
       - secretName: "${secretName}"
         hosts:
           - "${domain}"
-  customInitContainers:
-    - name: "volume-permissions"
-      image: "${CustomInitContainerImage}"
-      imagePullPolicy: "Always"
-      command: ["sh", "-c", "chown -R 1000:1000 /var/jenkins_home"]
-      volumeMounts:
-        - name: jenkins-home
-          mountPath: /var/jenkins_home
-      securityContext:
-        runAsUser: 0
-        runAsGroup: 0
-        privileged: true
+  # customInitContainers:
+  #   - name: "volume-permissions"
+  #     image: "${CustomInitContainerImage}"
+  #     imagePullPolicy: "Always"
+  #     command: ["sh", "-c", "chown -R 1000:1000 /var/jenkins_home"]
+  #     volumeMounts:
+  #       - name: jenkins-home
+  #         mountPath: /var/jenkins_home
+  #     securityContext:
+  #       runAsUser: 0
+  #       runAsGroup: 0
+  #       privileged: true
