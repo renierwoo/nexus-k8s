@@ -154,21 +154,21 @@ module "WireGuard" {
   depends_on = [module.IngressNginxController]
 }
 
-module "Jenkins" {
-  source = "./services/Jenkins"
+# module "Jenkins" {
+#   source = "./services/Jenkins"
 
-  domain                               = var.domain
-  jenkins_controller_domain            = var.jenkins_controller_domain
-  domain_tls_key                       = var.domain_tls_key
-  domain_tls_crt                       = var.domain_tls_crt
-  jenkins_controller_release_name      = var.jenkins_controller_release_name
-  jenkins_controller_repository        = var.jenkins_controller_repository
-  jenkins_controller_chart             = var.jenkins_controller_chart
-  jenkins_controller_chart_version     = var.jenkins_controller_chart_version
-  jenkins_controller_release_namespace = var.jenkins_controller_release_namespace
-  jenkins_controller_image_tag         = var.jenkins_controller_image_tag
-  jenkins_controller_admin_user        = var.jenkins_controller_admin_user
-  jenkins_controller_admin_password    = var.jenkins_controller_admin_password
+#   domain                               = var.domain
+#   jenkins_controller_domain            = var.jenkins_controller_domain
+#   domain_tls_key                       = var.domain_tls_key
+#   domain_tls_crt                       = var.domain_tls_crt
+#   jenkins_controller_release_name      = var.jenkins_controller_release_name
+#   jenkins_controller_repository        = var.jenkins_controller_repository
+#   jenkins_controller_chart             = var.jenkins_controller_chart
+#   jenkins_controller_chart_version     = var.jenkins_controller_chart_version
+#   jenkins_controller_release_namespace = var.jenkins_controller_release_namespace
+#   jenkins_controller_image_tag         = var.jenkins_controller_image_tag
+#   jenkins_controller_admin_user        = var.jenkins_controller_admin_user
+#   jenkins_controller_admin_password    = var.jenkins_controller_admin_password
 
-  depends_on = [module.IngressNginxController]
-}
+#   depends_on = [module.IngressNginxController]
+# }
